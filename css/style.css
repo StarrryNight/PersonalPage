@@ -1,0 +1,404 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --ff-primary: 'Rajdhani', serif;
+    --ff-secondary: 'Rajdhani',sans-serif;
+    --fw-reg: 300;
+    --fw-bold: 900;
+    
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+
+    --fs-h1: 4rem;
+    --fs-h2: 3.25rem;
+    --fs-h3: 2.25rem;
+    --fs-h4: 2rem;
+    --fs-h5: 1.5rem;
+    --fs-body: 1rem;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+
+       
+    } 
+    .intro--imgs{
+        grid-area: img;
+        min-width: 200;
+
+    
+    }
+
+    
+
+     
+}
+
+
+
+
+body{
+    background: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+
+    padding: 100px;
+    
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+h4 { font-size: var(--fs-h4) }
+h5 { font-size: var(--fs-h5) }
+
+.nav-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.nav{
+    display: flex;
+    
+    width: 400px;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    top:0;
+    right:0;
+
+    justify-content: center;
+    align-items: center;
+    
+    border-bottom-left-radius: 10px;
+    
+}
+
+
+.nav ul{
+    display: flex;
+    width: 350px;
+
+}
+
+.nav ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.nav ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.nav ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: black;
+}
+.nav ul li a .text{
+    position: absolute;
+    color: black;
+    font-weight: 400;
+    top:10px;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity:0;
+  transform: translateY((0));  
+}
+
+.nav ul li.active a .text{
+  opacity: 1;
+  transform: translateY((0px));
+}
+
+.nav ul li.active a .icon{
+    transform: translateY(38px);
+}
+
+.indicator{
+    position: absolute;
+    bottom: -50%;
+    width: 70px;
+    height: 70px;
+    background: var(--clr-accent);
+    border-radius: 50%;
+    border: 10px double var(--clr-accent);
+    background-clip: padding-box;
+    transition: 0.5s;
+    
+}
+
+
+/* 
+.indicator::before
+{
+    content: "";
+    position: absolute;
+    top: 9px;
+   right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr-dark);
+    transform: rotateZ(180deg);
+    
+}
+
+.indicator::after
+{
+    content: "";
+    position: absolute;
+    top: 9px;
+   left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr-dark);
+    transform: rotateZ(180deg);
+    
+} */
+
+.nav ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(70px*0));
+}
+.nav ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(70px*1));
+}
+.nav ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(70px*2));
+}
+.nav ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(70px*3));
+}
+.nav ul li:nth-child(5).active ~ .indicator{
+    transform: translateX(calc(70px*4));
+}
+
+
+
+
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--aboutMe{
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+/* intro */
+.intro{
+    position: relative;
+}
+
+section{
+    padding: 5rem 2rem;
+}
+
+@media (min-width: 800px) {
+    :root {
+
+        --fs-h1: 4rem;
+        --fs-h2: 3.25rem;
+        --fs-h3: 2.25rem;
+        --fs-h4: 2rem;
+        --fs-h5: 1.5rem;
+        --fs-body: 1rem;
+      
+    }
+}
+
+
+
+/*guitar*/
+.guitar{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding:25px 20px;
+  
+}
+
+.guitar .guitar--boxContainer{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap:20px;
+  }
+
+  .guitar .guitar--boxContainer .guitar--box{
+    background-color: #fff;
+    padding:20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    display: none;
+    transition: 0.5s;
+    
+    
+  }
+
+
+  .guitar .guitar--boxContainer .guitar--box:nth-child(1),
+  .guitar .guitar--boxContainer .guitar--box:nth-child(2),.guitar .guitar--boxContainer .guitar--box:nth-child(3)
+  {
+   display: inline-block;
+    
+    
+  }
+
+
+  .guitar .guitar--boxContainer .guitar--box .video video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .guitar .guitar--boxContainer .guitar--box:hover{
+    transform: scale(1.1);
+  }
+
+  .guitar .guitar--boxContainer .guitar--box .guitar--content .guitar--readmore{
+    display: inline-block;
+    padding:10px 30px;
+    border:1px solid #334;
+    color:#334;
+    font-size: 16px;
+  }
+
+  .guitar .guitar--boxContainer .guitar--box .guitar--content .guitar--readmore:hover{
+    transform: scale(1.1);
+    color: rgb(0, 0, 0);
+  }
+
+  .guitar .guitar--boxContainer .guitar--box .guitar--content .guitar--icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top:1px solid #334;
+  }
+
+  .guitar .guitar--boxContainer .guitar--box .guitar--content .guitar--icons span i{
+    color: darkblue;
+  }
+
+
+  #load-more{
+    margin-top: 20px;
+    display: inline-block;
+    padding:13px 30px;
+    border:1px solid #334;
+    color:#334;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  #load-more:hover{
+    background-color: darkblue;
+    border-color: darkblue;
+    color:#fff;
+    display: inline-block;
+  }
+  
+
+/*contact*/
+.contact{
+    
+}
+
+.contactList{
+    display: grid;
+   
+    width: min-content;
+    margin: auto auto;
+    margin-top: 100px;
+    grid-column-gap: 1em;
+
+   
+
+    grid-template-columns: [line1] 300px [line2] 300px [line3];
+    grid-template-rows: [row1-start] 300px [row2-start] 300px [last-line]; 
+    grid-template-areas: 
+    
+    "Instagram discord"
+    "github discord"
+    ;
+    
+
+    ;
+
+    
+   
+  
+}
+
