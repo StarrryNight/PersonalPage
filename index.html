@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <title>
                 samuel personal website
             </title>
@@ -11,13 +11,19 @@
             <link rel="stylesheet" href="css/style.css">
             <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Rajdhani">
+  <!-- Link Swiper's CSS -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+/>
     </head>
 
     <body>
+        <div class="backgrounds">
+
+        </div>
         <header>
-                <div class="logo">
-                    <img src="images/logo.png" alt = "hi">
-                </div>
+                
                 <button class="nav-toggle" aria-label="toggle navigation">
                     <span class = "hamburger"></span>
                 </button>
@@ -54,6 +60,22 @@
     
                                     <span class="icon"><ion-icon name="code-slash-outline"></ion-icon></span>
                                     <span class="text">Projects</span>
+                                    
+                                </a>
+                            </li>
+                            <li class = "nav__item">
+                                <a href="#gamingClips" class = "nav__link">
+    
+                                    <span class="icon"><ion-icon name="game-controller-outline"></ion-icon></ion-icon></span>
+                                    <span class="text">Gaming clips</span>
+                                    
+                                </a>
+                            </li>
+                            <li class = "nav__item">
+                                <a href="#OngoingProjects" class = "nav__link">
+    
+                                    <span class="icon"><ion-icon name="hammer-outline"></ion-icon></span>
+                                    <span class="text">Ongoing Projects</span>
                                     
                                 </a>
                             </li>
@@ -157,36 +179,32 @@
             <div class="guitar--boxContainer">
                 <!--piece1-->
             <div class="guitar--box">
-                <video width="320" height="240" controls>
-                    <source src="videos/2022-03-17 15-34-57.mkv" type="video/mp4">
-                   
-                    Your browser does not support the video tag.
-                  </video>
+                <iframe  width="320" height="240" 
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
                 <div class="guitar--content">
                     <h3>guitar piece 1</h3>
                     <P>sna arrange by fuck</P>
                     <a href="#" class="guitar--readmore">read more</a>
                     <div class="guitar--icons">
                         <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-                        <span> <i class="fas fa-user"></i> by admin </span>
+                        
                      </div>
                 </div>
             </div>
 
              <!--piece2-->
             <div class="guitar--box">
-                <video width="320" height="240" controls>
-                    <source src="videos/2022-03-17 15-34-57.mkv" type="video/mp4">
-                   
-                    Your browser does not support the video tag.
-                  </video>
+                <iframe  width="320" height="240" 
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe>
                 <div class="guitar--content">
                     <h3>guitar piece 1</h3>
                     <P>sna arrange by fuck</P>
                     <a href="#" class="guitar--readmore">read more</a>
                     <div class="guitar--icons">
                         <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-                        <span> <i class="fas fa-user"></i> by admin </span>
+                        
                      </div>
                 </div>
             </div>
@@ -194,18 +212,16 @@
             <!--piece3-->
 
             <div class="guitar--box">
-                <video width="320" height="240" controls>
-                    <source src="videos/2022-03-17 15-34-57.mkv" type="video/mp4">
-                   
-                    Your browser does not support the video tag.
-                  </video>
+                 <iframe  width="320" height="240" 
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
                 <div class="guitar--content">
                     <h3>guitar piece 1</h3>
                     <P>sna arrange by fuck</P>
                     <a href="#" class="guitar--readmore">read more</a>
                     <div class="guitar--icons">
                         <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-                        <span> <i class="fas fa-user"></i> by admin </span>
+                        
                      </div>
                 </div>
             </div>
@@ -213,18 +229,16 @@
             <!--piece4-->
 
             <div class="guitar--box">
-                <video width="320" height="240" controls>
-                    <source src="videos/2022-03-17 15-34-57.mkv" type="video/mp4">
-                   
-                    Your browser does not support the video tag.
-                  </video>
+                <iframe  width="320" height="240" 
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe>
                 <div class="guitar--content">
                     <h3>guitar piece 1</h3>
                     <P>sna arrange by fuck</P>
                     <a href="#" class="guitar--readmore">read more</a>
                     <div class="guitar--icons">
                         <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-                        <span> <i class="fas fa-user"></i> by admin </span>
+                        
                      </div>
                 </div>
             </div>
@@ -263,24 +277,1083 @@ loadMoreBtn.onclick = () =>{
 
 
 
-
-
-        </section>
-        
+</section>
+        <h2 class="codingHeader">
+            My Coding Projects
+        </h2>
         <!--projects-->
 
         <section class="codingPro" id="codingPro">
-            <header>
-                <h1>
-                    My coding projects
-                </h1>
-               
-            </header>
-                <div class="project1">
-                    <img src="images/logo.png" alt="cannt show">
+            <div class="projectContainer swiper mySwiper">
+                <div class="content swiper-wrapper">
+                    <div  class="card swiper-slide" onclick="hi(this.id)">
+                        <div class="card-content ">
+                            <div class="image">
+                                <img src="images/logo.png" alt="fuck">
+                            </div>
+                            
+                            <div class="project-name">
+                                <h3>
+                                    <span class="name">fuck</span>
+                                </h3>
+                                
+                            </div>
+                            <div class="category">
+                                <span class="category">
+                                    Category: shit
+                                </span>
+                            </div>
+                           
+                        </div>
+                        <div class="dateIcon">
+                            <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide" onclick="hi(this.id)">
+                        <div class="card-content ">
+                            <div class="image">
+                                <img src="images/logo.png" alt="fuck">
+                            </div>
+                            
+                            <div class="project-name">
+                                <h3>
+                                    <span class="name">fuck</span>
+                                </h3>
+                                
+                            </div>
+                            <div class="category">
+                                <span class="category">
+                                    Category: shit
+                                </span>
+                            </div>
+                           
+                        </div>
+                        <div class="dateIcon">
+                            <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide" onclick="hi(this.id)">
+                        <div class="card-content ">
+                            <div class="image">
+                                <img src="images/logo.png" alt="fuck">
+                            </div>
+                            
+                            <div class="project-name">
+                                <h3>
+                                    <span class="name">fuck</span>
+                                </h3>
+                                
+                            </div>
+                            <div class="category">
+                                <span class="category">
+                                    Category: shit
+                                </span>
+                            </div>
+                           
+                        </div>
+                        <div class="dateIcon">
+                            <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide" onclick="hi(this.id)">
+                        <div class="card-content ">
+                            <div class="image">
+                                <img src="images/logo.png" alt="fuck">
+                            </div>
+                            
+                            <div class="project-name">
+                                <h3>
+                                    <span class="name">fuck</span>
+                                </h3>
+                                
+                            </div>
+                            <div class="category">
+                                <span class="category">
+                                    Category: shit
+                                </span>
+                            </div>
+                           
+                        </div>
+                        <div class="dateIcon">
+                            <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide" onclick="hi(this.id)">
+                        <div class="card-content ">
+                            <div class="image">
+                                <img src="images/logo.png" alt="fuck">
+                            </div>
+                            
+                            <div class="project-name">
+                                <h3>
+                                    <span class="name">fuck</span>
+                                </h3>
+                                
+                            </div>
+                            <div class="category">
+                                <span class="category">
+                                    Category: asf
+                                </span>
+                            </div>
+                           
+                        </div>
+                        <div class="dateIcon">
+                            <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+                        </div>
+                    </div>
                 </div>
-                
+                <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+            </div>
+
+            
+
+
+      <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        let cards = [...document.querySelectorAll('.card')];
+        for(var i=0;i<5;i++){
+                        
+            cards[i].setAttribute('id',i);
+                    }
+        
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+
+            <script>
+                function hi( s){
+                    
+                    popup(s);
+
+
+
+                    // cards.forEach(function(item,index){
+                    //    console.log("SFSF");
+                    //     if(this==item){
+                    //         console.log("sfsfsf");
+                    //     }
+                    // })
+                }
+            </script>
+
+
+
+
+
+
         </section>
+
+        <section>
+
+            <div class="panels">
+                
+
+                <!--project1-->
+                <div class="scroll-bg">
+                    <button class="exit" onclick="exit()" >
+                        X
+                    </button>
+                    <div class="scroll-div">
+                        <div class="scrol-oject">
+                            <h2>
+                                project 1
+                            </h2>
+                            <img src="images/DiscordLogo.png" alt="ficsc">
+                            <p>
+                                The word-break property in CSS can be used to change when line breaks ought to occur. Normally, line breaks in text can only occur in certain spaces, like when there is a space or a hyphen.
+
+
+                                In the example below we can make the word-break between letters instead:
+                                
+                                .element {
+                                  word-break: break-all;
+                                }
+                                If we then set the width of the text to one em, the word will break by each letter:
+                                
+                                
+                                This value is often used in places with user generated content so that long strings don’t risk breaking the layout. One very common example is a long copy and pasted URL. If that URL has no hyphens, it can extend beyond the parent box and look bad or worse, cause layout problems.
+                                
+                                
+                                Values
+                                normal: use the default rules for word breaking.
+                                break-all: any word/letter can break onto the next line.
+                                keep-all: for Chinese, Japanese and Korean text words are not broken. Otherwise this is the same as normal.
+                                This property is also often used in conjunction with the hyphens property so that when breaks occur a hypen is inserted, as per the standard in books.
+                                
+                                The full usage, with needed vendor prefixes, is:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                     /* Non standard for WebKit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                        hyphens: auto;
+                                Using these properties on the universal selector can be useful if you have a site with a lot of user-generated content. Although fair warning, it can look weird on titles and pre-formatted text (
+                                
+                                
+                                ).
+                                Related
+                                overflow-wrap
+                                hyphens
+                                white-space
+                                Handling Long Words and URLs
+                                Browser Support
+                                This browser support data is from Caniuse, which has more detail. A number indicates that browser supports the feature at that version and up.
+                                
+                                Desktop
+                                Chrome	Firefox	IE	Edge	Safari
+                                23	49	11	18	6.1
+                                Mobile / Tablet
+                                Android Chrome	Android Firefox	Android	iOS Safari
+                                104	101	4.4	7.0-7.1
+                                Safari and iOS support the break-all value but not keep-all
+                                
+                                PROPERTIES
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                J
+                                L
+                                M
+                                O
+                                P
+                                Q
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Z
+                                SELECTORS
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                L
+                                M
+                                N
+                                O
+                                P
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Build and deploy apps at scale. Focus on your apps, not infrastructure. Try DigitalOcean for free.
+                                Get your apps to market faster with DigitalOcean's App Platform. Build, deploy, and scale apps quickly using a simple, fully managed solution. We’ll handle the infrastructure, app runtimes and dependencies, so that you can push code to production in just a few clicks.
+                                Ad for Mailchimp
+                                SPONSORED
+                                Get personalized content recommendations to make your emails more engaging. Sign up now.
+                                
+                                Ad for Squarespace
+                                SPONSORED
+                                Squarespace has the templates, designer fonts, and color palettes to fit your personal style.
+                                
+                                ads via Carbon
+                                Write Articles, Earn Bitcoin. Answer Questions, Earn Bitcoin. Start Earning.
+                                ads via Carbon
+                                DigitalOcean joining forces with CSS-Tricks! Special welcome offer: get $100 of free credit.
+                                Comments
+                                Jiayang Shen
+                                Permalink to comment# March 4, 2013
+                                It seems that “webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;”all has no effect. And is there hyphens property in the css specification?
+                                
+                                Reply
+                                Zach
+                                Permalink to comment# July 18, 2013
+                                I have the same problem too Jiayang…
+                                
+                                Harley Urquhart
+                                Permalink to comment# December 23, 2018
+                                you have not typed
+                                -webkit-hyphens: auto;
+                                instead you typed
+                                webkit-hyphens:auto;
+                                
+                                that’s where your error is. if you make an error in css all the following styles are disregarded
+                                
+                                karma
+                                Permalink to comment# July 20, 2013
+                                chrome does not supported it.
+                                
+                                http://caniuse.com/css-hyphens
+                                
+                                Reply
+                                Antti
+                                Permalink to comment# November 8, 2013
+                                Apparently IE10 supports prefixed hyphens property, so a more complete one would be:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                /* Non standard for webkit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                    -ms-hyphens: auto;
+                                        hyphens: auto;
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!--project 2-->
+                <div class="scroll-bg">
+                    <button class="exit" onclick="exit()" >
+                        X
+                    </button>
+                    <div class="scroll-div">
+                        <div class="scrol-oject">
+                            <h2>
+                                project 2
+                            </h2>
+                            <img src="images/DiscordLogo.png" alt="ficsc">
+                            <p>
+                                The word-break property in CSS can be used to change when line breaks ought to occur. Normally, line breaks in text can only occur in certain spaces, like when there is a space or a hyphen.
+
+
+                                In the example below we can make the word-break between letters instead:
+                                
+                                .element {
+                                  word-break: break-all;
+                                }
+                                If we then set the width of the text to one em, the word will break by each letter:
+                                
+                                
+                                This value is often used in places with user generated content so that long strings don’t risk breaking the layout. One very common example is a long copy and pasted URL. If that URL has no hyphens, it can extend beyond the parent box and look bad or worse, cause layout problems.
+                                
+                                
+                                Values
+                                normal: use the default rules for word breaking.
+                                break-all: any word/letter can break onto the next line.
+                                keep-all: for Chinese, Japanese and Korean text words are not broken. Otherwise this is the same as normal.
+                                This property is also often used in conjunction with the hyphens property so that when breaks occur a hypen is inserted, as per the standard in books.
+                                
+                                The full usage, with needed vendor prefixes, is:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                     /* Non standard for WebKit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                        hyphens: auto;
+                                Using these properties on the universal selector can be useful if you have a site with a lot of user-generated content. Although fair warning, it can look weird on titles and pre-formatted text (
+                                
+                                
+                                ).
+                                Related
+                                overflow-wrap
+                                hyphens
+                                white-space
+                                Handling Long Words and URLs
+                                Browser Support
+                                This browser support data is from Caniuse, which has more detail. A number indicates that browser supports the feature at that version and up.
+                                
+                                Desktop
+                                Chrome	Firefox	IE	Edge	Safari
+                                23	49	11	18	6.1
+                                Mobile / Tablet
+                                Android Chrome	Android Firefox	Android	iOS Safari
+                                104	101	4.4	7.0-7.1
+                                Safari and iOS support the break-all value but not keep-all
+                                
+                                PROPERTIES
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                J
+                                L
+                                M
+                                O
+                                P
+                                Q
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Z
+                                SELECTORS
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                L
+                                M
+                                N
+                                O
+                                P
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Build and deploy apps at scale. Focus on your apps, not infrastructure. Try DigitalOcean for free.
+                                Get your apps to market faster with DigitalOcean's App Platform. Build, deploy, and scale apps quickly using a simple, fully managed solution. We’ll handle the infrastructure, app runtimes and dependencies, so that you can push code to production in just a few clicks.
+                                Ad for Mailchimp
+                                SPONSORED
+                                Get personalized content recommendations to make your emails more engaging. Sign up now.
+                                
+                                Ad for Squarespace
+                                SPONSORED
+                                Squarespace has the templates, designer fonts, and color palettes to fit your personal style.
+                                
+                                ads via Carbon
+                                Write Articles, Earn Bitcoin. Answer Questions, Earn Bitcoin. Start Earning.
+                                ads via Carbon
+                                DigitalOcean joining forces with CSS-Tricks! Special welcome offer: get $100 of free credit.
+                                Comments
+                                Jiayang Shen
+                                Permalink to comment# March 4, 2013
+                                It seems that “webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;”all has no effect. And is there hyphens property in the css specification?
+                                
+                                Reply
+                                Zach
+                                Permalink to comment# July 18, 2013
+                                I have the same problem too Jiayang…
+                                
+                                Harley Urquhart
+                                Permalink to comment# December 23, 2018
+                                you have not typed
+                                -webkit-hyphens: auto;
+                                instead you typed
+                                webkit-hyphens:auto;
+                                
+                                that’s where your error is. if you make an error in css all the following styles are disregarded
+                                
+                                karma
+                                Permalink to comment# July 20, 2013
+                                chrome does not supported it.
+                                
+                                http://caniuse.com/css-hyphens
+                                
+                                Reply
+                                Antti
+                                Permalink to comment# November 8, 2013
+                                Apparently IE10 supports prefixed hyphens property, so a more complete one would be:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                /* Non standard for webkit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                    -ms-hyphens: auto;
+                                        hyphens: auto;
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!--project 3-->
+
+
+                <div class="scroll-bg">
+                    <button class="exit" onclick="exit()" >
+                        X
+                    </button>
+                    <div class="scroll-div">
+                        <div class="scrol-oject">
+                            <h2>
+                                project 3
+                            </h2>
+                            <img src="images/DiscordLogo.png" alt="ficsc">
+                            <p>
+                                The word-break property in CSS can be used to change when line breaks ought to occur. Normally, line breaks in text can only occur in certain spaces, like when there is a space or a hyphen.
+
+
+                                In the example below we can make the word-break between letters instead:
+                                
+                                .element {
+                                  word-break: break-all;
+                                }
+                                If we then set the width of the text to one em, the word will break by each letter:
+                                
+                                
+                                This value is often used in places with user generated content so that long strings don’t risk breaking the layout. One very common example is a long copy and pasted URL. If that URL has no hyphens, it can extend beyond the parent box and look bad or worse, cause layout problems.
+                                
+                                
+                                Values
+                                normal: use the default rules for word breaking.
+                                break-all: any word/letter can break onto the next line.
+                                keep-all: for Chinese, Japanese and Korean text words are not broken. Otherwise this is the same as normal.
+                                This property is also often used in conjunction with the hyphens property so that when breaks occur a hypen is inserted, as per the standard in books.
+                                
+                                The full usage, with needed vendor prefixes, is:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                     /* Non standard for WebKit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                        hyphens: auto;
+                                Using these properties on the universal selector can be useful if you have a site with a lot of user-generated content. Although fair warning, it can look weird on titles and pre-formatted text (
+                                
+                                
+                                ).
+                                Related
+                                overflow-wrap
+                                hyphens
+                                white-space
+                                Handling Long Words and URLs
+                                Browser Support
+                                This browser support data is from Caniuse, which has more detail. A number indicates that browser supports the feature at that version and up.
+                                
+                                Desktop
+                                Chrome	Firefox	IE	Edge	Safari
+                                23	49	11	18	6.1
+                                Mobile / Tablet
+                                Android Chrome	Android Firefox	Android	iOS Safari
+                                104	101	4.4	7.0-7.1
+                                Safari and iOS support the break-all value but not keep-all
+                                
+                                PROPERTIES
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                J
+                                L
+                                M
+                                O
+                                P
+                                Q
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Z
+                                SELECTORS
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                L
+                                M
+                                N
+                                O
+                                P
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Build and deploy apps at scale. Focus on your apps, not infrastructure. Try DigitalOcean for free.
+                                Get your apps to market faster with DigitalOcean's App Platform. Build, deploy, and scale apps quickly using a simple, fully managed solution. We’ll handle the infrastructure, app runtimes and dependencies, so that you can push code to production in just a few clicks.
+                                Ad for Mailchimp
+                                SPONSORED
+                                Get personalized content recommendations to make your emails more engaging. Sign up now.
+                                
+                                Ad for Squarespace
+                                SPONSORED
+                                Squarespace has the templates, designer fonts, and color palettes to fit your personal style.
+                                
+                                ads via Carbon
+                                Write Articles, Earn Bitcoin. Answer Questions, Earn Bitcoin. Start Earning.
+                                ads via Carbon
+                                DigitalOcean joining forces with CSS-Tricks! Special welcome offer: get $100 of free credit.
+                                Comments
+                                Jiayang Shen
+                                Permalink to comment# March 4, 2013
+                                It seems that “webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;”all has no effect. And is there hyphens property in the css specification?
+                                
+                                Reply
+                                Zach
+                                Permalink to comment# July 18, 2013
+                                I have the same problem too Jiayang…
+                                
+                                Harley Urquhart
+                                Permalink to comment# December 23, 2018
+                                you have not typed
+                                -webkit-hyphens: auto;
+                                instead you typed
+                                webkit-hyphens:auto;
+                                
+                                that’s where your error is. if you make an error in css all the following styles are disregarded
+                                
+                                karma
+                                Permalink to comment# July 20, 2013
+                                chrome does not supported it.
+                                
+                                http://caniuse.com/css-hyphens
+                                
+                                Reply
+                                Antti
+                                Permalink to comment# November 8, 2013
+                                Apparently IE10 supports prefixed hyphens property, so a more complete one would be:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                /* Non standard for webkit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                    -ms-hyphens: auto;
+                                        hyphens: auto;
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--project 4-->
+
+
+                <div class="scroll-bg">
+                    <button class="exit" onclick="exit()" >
+                        X
+                    </button>
+                    <div class="scroll-div">
+                        <div class="scrol-oject">
+                            <h2>
+                                project 4
+                            </h2>
+                            <img src="images/DiscordLogo.png" alt="ficsc">
+                            <p>
+                                The word-break property in CSS can be used to change when line breaks ought to occur. Normally, line breaks in text can only occur in certain spaces, like when there is a space or a hyphen.
+
+
+                                In the example below we can make the word-break between letters instead:
+                                
+                                .element {
+                                  word-break: break-all;
+                                }
+                                If we then set the width of the text to one em, the word will break by each letter:
+                                
+                                
+                                This value is often used in places with user generated content so that long strings don’t risk breaking the layout. One very common example is a long copy and pasted URL. If that URL has no hyphens, it can extend beyond the parent box and look bad or worse, cause layout problems.
+                                
+                                
+                                Values
+                                normal: use the default rules for word breaking.
+                                break-all: any word/letter can break onto the next line.
+                                keep-all: for Chinese, Japanese and Korean text words are not broken. Otherwise this is the same as normal.
+                                This property is also often used in conjunction with the hyphens property so that when breaks occur a hypen is inserted, as per the standard in books.
+                                
+                                The full usage, with needed vendor prefixes, is:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                     /* Non standard for WebKit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                        hyphens: auto;
+                                Using these properties on the universal selector can be useful if you have a site with a lot of user-generated content. Although fair warning, it can look weird on titles and pre-formatted text (
+                                
+                                
+                                ).
+                                Related
+                                overflow-wrap
+                                hyphens
+                                white-space
+                                Handling Long Words and URLs
+                                Browser Support
+                                This browser support data is from Caniuse, which has more detail. A number indicates that browser supports the feature at that version and up.
+                                
+                                Desktop
+                                Chrome	Firefox	IE	Edge	Safari
+                                23	49	11	18	6.1
+                                Mobile / Tablet
+                                Android Chrome	Android Firefox	Android	iOS Safari
+                                104	101	4.4	7.0-7.1
+                                Safari and iOS support the break-all value but not keep-all
+                                
+                                PROPERTIES
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                J
+                                L
+                                M
+                                O
+                                P
+                                Q
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Z
+                                SELECTORS
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                L
+                                M
+                                N
+                                O
+                                P
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Build and deploy apps at scale. Focus on your apps, not infrastructure. Try DigitalOcean for free.
+                                Get your apps to market faster with DigitalOcean's App Platform. Build, deploy, and scale apps quickly using a simple, fully managed solution. We’ll handle the infrastructure, app runtimes and dependencies, so that you can push code to production in just a few clicks.
+                                Ad for Mailchimp
+                                SPONSORED
+                                Get personalized content recommendations to make your emails more engaging. Sign up now.
+                                
+                                Ad for Squarespace
+                                SPONSORED
+                                Squarespace has the templates, designer fonts, and color palettes to fit your personal style.
+                                
+                                ads via Carbon
+                                Write Articles, Earn Bitcoin. Answer Questions, Earn Bitcoin. Start Earning.
+                                ads via Carbon
+                                DigitalOcean joining forces with CSS-Tricks! Special welcome offer: get $100 of free credit.
+                                Comments
+                                Jiayang Shen
+                                Permalink to comment# March 4, 2013
+                                It seems that “webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;”all has no effect. And is there hyphens property in the css specification?
+                                
+                                Reply
+                                Zach
+                                Permalink to comment# July 18, 2013
+                                I have the same problem too Jiayang…
+                                
+                                Harley Urquhart
+                                Permalink to comment# December 23, 2018
+                                you have not typed
+                                -webkit-hyphens: auto;
+                                instead you typed
+                                webkit-hyphens:auto;
+                                
+                                that’s where your error is. if you make an error in css all the following styles are disregarded
+                                
+                                karma
+                                Permalink to comment# July 20, 2013
+                                chrome does not supported it.
+                                
+                                http://caniuse.com/css-hyphens
+                                
+                                Reply
+                                Antti
+                                Permalink to comment# November 8, 2013
+                                Apparently IE10 supports prefixed hyphens property, so a more complete one would be:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                /* Non standard for webkit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                    -ms-hyphens: auto;
+                                        hyphens: auto;
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--project 5-->
+
+
+                <div class="scroll-bg">
+                    <button class="exit" onclick="exit()" >
+                        X
+                    </button>
+                    <div class="scroll-div">
+                        <div class="scrol-oject">
+                            <h2>
+                                project 5
+                            </h2>
+                            <img src="images/DiscordLogo.png" alt="ficsc">
+                            <p>
+                                The word-break property in CSS can be used to change when line breaks ought to occur. Normally, line breaks in text can only occur in certain spaces, like when there is a space or a hyphen.
+
+
+                                In the example below we can make the word-break between letters instead:
+                                
+                                .element {
+                                  word-break: break-all;
+                                }
+                                If we then set the width of the text to one em, the word will break by each letter:
+                                
+                                
+                                This value is often used in places with user generated content so that long strings don’t risk breaking the layout. One very common example is a long copy and pasted URL. If that URL has no hyphens, it can extend beyond the parent box and look bad or worse, cause layout problems.
+                                
+                                
+                                Values
+                                normal: use the default rules for word breaking.
+                                break-all: any word/letter can break onto the next line.
+                                keep-all: for Chinese, Japanese and Korean text words are not broken. Otherwise this is the same as normal.
+                                This property is also often used in conjunction with the hyphens property so that when breaks occur a hypen is inserted, as per the standard in books.
+                                
+                                The full usage, with needed vendor prefixes, is:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                     /* Non standard for WebKit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                        hyphens: auto;
+                                Using these properties on the universal selector can be useful if you have a site with a lot of user-generated content. Although fair warning, it can look weird on titles and pre-formatted text (
+                                
+                                
+                                ).
+                                Related
+                                overflow-wrap
+                                hyphens
+                                white-space
+                                Handling Long Words and URLs
+                                Browser Support
+                                This browser support data is from Caniuse, which has more detail. A number indicates that browser supports the feature at that version and up.
+                                
+                                Desktop
+                                Chrome	Firefox	IE	Edge	Safari
+                                23	49	11	18	6.1
+                                Mobile / Tablet
+                                Android Chrome	Android Firefox	Android	iOS Safari
+                                104	101	4.4	7.0-7.1
+                                Safari and iOS support the break-all value but not keep-all
+                                
+                                PROPERTIES
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                J
+                                L
+                                M
+                                O
+                                P
+                                Q
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Z
+                                SELECTORS
+                                A
+                                B
+                                C
+                                D
+                                E
+                                F
+                                G
+                                H
+                                I
+                                L
+                                M
+                                N
+                                O
+                                P
+                                R
+                                S
+                                T
+                                U
+                                V
+                                W
+                                Build and deploy apps at scale. Focus on your apps, not infrastructure. Try DigitalOcean for free.
+                                Get your apps to market faster with DigitalOcean's App Platform. Build, deploy, and scale apps quickly using a simple, fully managed solution. We’ll handle the infrastructure, app runtimes and dependencies, so that you can push code to production in just a few clicks.
+                                Ad for Mailchimp
+                                SPONSORED
+                                Get personalized content recommendations to make your emails more engaging. Sign up now.
+                                
+                                Ad for Squarespace
+                                SPONSORED
+                                Squarespace has the templates, designer fonts, and color palettes to fit your personal style.
+                                
+                                ads via Carbon
+                                Write Articles, Earn Bitcoin. Answer Questions, Earn Bitcoin. Start Earning.
+                                ads via Carbon
+                                DigitalOcean joining forces with CSS-Tricks! Special welcome offer: get $100 of free credit.
+                                Comments
+                                Jiayang Shen
+                                Permalink to comment# March 4, 2013
+                                It seems that “webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;”all has no effect. And is there hyphens property in the css specification?
+                                
+                                Reply
+                                Zach
+                                Permalink to comment# July 18, 2013
+                                I have the same problem too Jiayang…
+                                
+                                Harley Urquhart
+                                Permalink to comment# December 23, 2018
+                                you have not typed
+                                -webkit-hyphens: auto;
+                                instead you typed
+                                webkit-hyphens:auto;
+                                
+                                that’s where your error is. if you make an error in css all the following styles are disregarded
+                                
+                                karma
+                                Permalink to comment# July 20, 2013
+                                chrome does not supported it.
+                                
+                                http://caniuse.com/css-hyphens
+                                
+                                Reply
+                                Antti
+                                Permalink to comment# November 8, 2013
+                                Apparently IE10 supports prefixed hyphens property, so a more complete one would be:
+                                
+                                 -ms-word-break: break-all;
+                                     word-break: break-all;
+                                
+                                /* Non standard for webkit */
+                                     word-break: break-word;
+                                
+                                -webkit-hyphens: auto;
+                                   -moz-hyphens: auto;
+                                    -ms-hyphens: auto;
+                                        hyphens: auto;
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <script>
+                let codingPanels = [...document.querySelectorAll('.scroll-bg')];
+                
+                var currentActive;
+        for(var i=0;i<5;i++){
+                        
+            cards[i].setAttribute('id',i);
+                    }
+
+
+                    function popup(val){
+                        document.body.classList.add("parentDisable");
+                        codingPanels[val].style.display="flex";
+                        currentActive=val;
+                    }
+
+
+                    function exit(){
+                        document.body.classList.remove("parentDisable");
+                        codingPanels[currentActive].style.display="none";
+
+                    }
+            </script>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!--gaming-->
         <section class="gamingClips" id="gamingClips">
