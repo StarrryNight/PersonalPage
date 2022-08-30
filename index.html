@@ -31,7 +31,7 @@
             <h5>Range</h5>
             <input id="sliderRange" type="range" min="0" max="15" value="5" oninput="showValRange(this.value)">
             <h5>Frequency</h5>
-            <input id="sliderFre" type="range" min="0" max="100" value="50" oninput="showVal(this.value)">
+            <input id="sliderFre" type="range" min="0" max="150" value="50" oninput="showVal(this.value)">
             
         </div>
         <section class="nav-section">
@@ -132,6 +132,34 @@
         </section>
 
         <script>
+var nav = document.querySelectorAll('.nav');
+var nnum=0;
+
+    
+    
+window.addEventListener('mousemove', navAppear, {once : true});
+function navAppear(){
+    setTimeout(appear,3000);
+    
+
+}
+
+const newspaperSpinning = [
+  { transform: 'rotate(0) scale(0)' },
+  { transform: 'rotate(360deg) scale(1)' }
+];
+
+const newspaperTiming = {
+  duration:2000,
+  
+}
+
+function appear(){
+    nav[0].style.display='flex';
+    nav[0].animate(newspaperSpinning, newspaperTiming);
+}
+
+
             let f= document.getElementById("hii");
            function checkC(s){
             
@@ -245,7 +273,7 @@
                         b.position.x = bPos.x;
                         b.position.y = bPos.y;
 
-                        console.log(b.position);
+                      
                         this.tl = new TimelineMax();
                         this.tl.to(b.scale, 1, { x: Math.random() * 1.5, y: Math.random() * 1.5, ease: Expo.easeOut });
                         this.tl.to(b.scale, 1, { x: 0.01, y: 0.01, z: 0.01, ease: Expo.easeOut });
