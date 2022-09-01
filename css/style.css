@@ -266,7 +266,11 @@ canvas {
   
 }
 
-.status .container.text
+.status .container .designed{
+  top: 70vh;
+  position: absolute;
+  z-index: 1000;
+}
 
 .section__title {
   margin-bottom: 0.25em;
