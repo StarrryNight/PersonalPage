@@ -562,21 +562,46 @@ background:var(--clr-accent);
   width: auto;
   margin-left: auto;
   margin-right: auto;
-  height: 800px;
+  height: 700px;
   word-break: break-word;
   padding: 60px;
   overscroll-behavior: contain;
-  justify-content: center;
+ 
   
 }
 
 
-.scrol-oject{
+.scrol-oject .texts{
  display: flex;
  align-items: center;
  justify-content: flex-start;
  flex-direction: column;
+ padding-bottom: 70px;
+ margin: 20px;
 }
+
+.scrol-oject .texts p{
+  
+  padding: 20px;
+ }
+
+.scrol-oject .texts h2{
+  padding: 20px;
+ }
+
+.scrol-oject .snippet{
+ justify-content: left;
+  flex-direction: column;
+  text-decoration: underline;
+  white-space: pre-line;
+  color: #303030;
+ 
+ }
+
+ .snip{
+  margin: 20px;
+  border: 3px solid #303030;
+ }
 
 .scroll-div .scrol-oject img
 {

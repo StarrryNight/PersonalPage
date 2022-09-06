@@ -538,49 +538,49 @@ function appear(){
 
                         </div>
                         <div class="dateIcon">
-                            <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+                            <span> <i class="fas fa-calendar"></i> 6th September, 2022 </span>
                         </div>
                     </div>
 
                     <div class="card swiper-slide" onclick="hi(this.id)">
                         <div class="card-content ">
                             <div class="image">
-                                <img src="images/logo.png" alt="fuck">
+                                <img width="360" height="240" src="images/ponglogo.png" alt="fuck">
                             </div>
 
                             <div class="project-name">
                                 <h3>
-                                    <span class="name">124</span>
+                                    <span class="name">Pong</span>
                                 </h3>
 
                             </div>
                             <div class="category">
                                 <span class="category">
-                                    Category: 12442
+                                    Category: Game
                                 </span>
                             </div>
 
                         </div>
                         <div class="dateIcon">
-                            <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+                            <span> <i class="fas fa-calendar"></i> 6th September, 2022 </span>
                         </div>
                     </div>
 
                     <div class="card swiper-slide" onclick="hi(this.id)">
                         <div class="card-content ">
                             <div class="image">
-                                <img src="images/logo.png" alt="fuck">
+                                <img src="images/box shooter logo.png" alt="fuck">
                             </div>
 
                             <div class="project-name">
                                 <h3>
-                                    <span class="name">124241</span>
+                                    <span class="name">Square Shooter</span>
                                 </h3>
 
                             </div>
                             <div class="category">
                                 <span class="category">
-                                    Category: 124214
+                                    Category: Game
                                 </span>
                             </div>
 
@@ -707,24 +707,130 @@ function appear(){
                     </button>
                     <div class="scroll-div">
                         <div class="scrol-oject">
-                            <h2>
-                                Vocab meaning/quote generator
-                            </h2>
-                            <img width="360px" height="240px"  src="images/Vocab Scanner.png" alt="ficsc">
-                            <p>
-                               When I was grade 10, I have a homework that needs me to find the meaning and quotation from the book for 30-40 of vocabs. In order to not waste my time, I used java and the jsoup library to find the meanings and quotation with just the input of vocabs in the console. You have to provide the text to find quotations in tho.
-                            </p>
-                            <p>here is the example of the output
+                            <div class="texts">
+                                <h2>
+                                    Vocab meaning/quote generator
+                                </h2>
+                                <img width="360px" height="240px"  src="images/Vocab Scanner.png" alt="ficsc">
+                                <p>
+                                   When I was grade 10, I have a homework that needs me to find the meaning and quotation from the book for 30-40 of vocabs. In order to not waste my time, I used java and the jsoup library to find the meanings and quotation with just the input of vocabs in the console. You have to provide the text to find quotations in tho.
+                                </p>
+                                <p>here is the example of the output
+    
+                                    
+                                </p>
 
-                                
-                            </p>
-                            <img width="360px" height="240px" src="images/Vocab Scanner2.png">
-                            <p>here is the example of the output
 
+                                <img width="360px" height="240px" src="images/Vocab Scanner2.png">
                                 
-                            </p>
+                                <div class="snip">
+                                <p> <code class="snippet">
+                                    
+                                        package vocabMeanings;
+
+
+import java.io.IOException;
+import java.util.*;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class vacabs {
+
+		static Map&lt;String,String&gt; hashmap = new LinkedHashMap&lt;String,String&gt;();
+		static String paragraph = "";
+				static String [] array1 = new String[1000];
+				static int control=0;
+
+	    public static void main(String[] args) {
+	    	String word="hi";
+	    	Scanner input = new Scanner(System.in);
+	    	int b=input.nextInt();
+	    	for(int i=0;i&lt;b;i++) {
+	    		try {
+	    			word = input.next();
+	    			
+	    			getWebsite(word);
+	    		} catch(Exception e) {
+	    			print();
+	    		}
+	    	}
+	    	print();
+	    	
+	        
+	    }
+	    public static void getWebsite(String word){
+	        StringBuffer prefab = new StringBuffer("http://dictionary.com/browse/");
+	        prefab.append(word);
+	        String str= prefab.toString();
+	      
+	        copyText(str, word);
+	    }
+	    public static void copyText(String link, String word) {
+	    	
+	    	Document doc = null;
+	    			try {
+						doc = Jsoup.connect(link).get();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						doc =null;
+					}
+	    			
+	    			Elements className = doc.getElementsByClass("css-10n3ydx e1hk9ate0");
+	    			String linkText = className.text();
+	    			String [] textArray = linkText.split("\\.");
+	    			hashmap.put(word,textArray[0]);
+	    			findSentence(word);
+					
+	    }
+	    
+	    public static void print() {
+	    	int x=0;
+	    	for(String name: hashmap.keySet()) {
+	    		System.out.println("");
+	    		System.out.println(name);
+	    		System.out.println("");
+	    		System.out.println(hashmap.get(name));
+	    		System.out.println("");
+	    		System.out.println(array1[x]);
+	    		System.out.println("");
+	    		x++;
+	    	}
+	    }
+	    
+	    public static void findSentence(String word) {
+	    	String [] array = paragraph.split("\\.");
+	    	
+	    	for(int i=0;i&lt;array.length;i++) {
+	    	
+	    		if (array[i].indexOf(word)!= -1) {
+	    			array1[control] = array[i];
+	    			
+	    			
+	    			break;
+	    		}
+	    	}
+	    	control++;
+	    }
+	    
+	 
+
+	
+}
+                                   
+
+                                </code></p>
+
+                            </div>
+                               
+                            </div>
+                           
 
                         </div>
+                        
                     </div>
                 </div>
 
@@ -737,188 +843,32 @@ function appear(){
                     </button>
                     <div class="scroll-div">
                         <div class="scrol-oject">
-                            <h2>
-                                project 3
-                            </h2>
-                            <img src="images/DiscordLogo.png" alt="ficsc">
-                            <p>
-                                The word-break property in CSS can be used to change when line breaks ought to occur.
-                                Normally, line breaks in text can only occur in certain spaces, like when there is a
-                                space
-                                or a hyphen.
-
-
-                                In the example below we can make the word-break between letters instead:
-
-                                .element {
-                                word-break: break-all;
-                                }
-                                If we then set the width of the text to one em, the word will break by each letter:
-
-
-                                This value is often used in places with user generated content so that long strings
-                                don’t
-                                risk breaking the layout. One very common example is a long copy and pasted URL. If that
-                                URL
-                                has no hyphens, it can extend beyond the parent box and look bad or worse, cause layout
-                                problems.
-
-
-                                Values
-                                normal: use the default rules for word breaking.
-                                break-all: any word/letter can break onto the next line.
-                                keep-all: for Chinese, Japanese and Korean text words are not broken. Otherwise this is
-                                the
-                                same as normal.
-                                This property is also often used in conjunction with the hyphens property so that when
-                                breaks occur a hypen is inserted, as per the standard in books.
-
-                                The full usage, with needed vendor prefixes, is:
-
-                                -ms-word-break: break-all;
-                                word-break: break-all;
-
-                                /* Non standard for WebKit */
-                                word-break: break-word;
-
-                                -webkit-hyphens: auto;
-                                -moz-hyphens: auto;
-                                hyphens: auto;
-                                Using these properties on the universal selector can be useful if you have a site with a
-                                lot
-                                of user-generated content. Although fair warning, it can look weird on titles and
-                                pre-formatted text (
-
-
-                                ).
-                                Related
-                                overflow-wrap
-                                hyphens
-                                white-space
-                                Handling Long Words and URLs
-                                Browser Support
-                                This browser support data is from Caniuse, which has more detail. A number indicates
-                                that
-                                browser supports the feature at that version and up.
-
-                                Desktop
-                                Chrome Firefox IE Edge Safari
-                                23 49 11 18 6.1
-                                Mobile / Tablet
-                                Android Chrome Android Firefox Android iOS Safari
-                                104 101 4.4 7.0-7.1
-                                Safari and iOS support the break-all value but not keep-all
-
-                                PROPERTIES
-                                A
-                                B
-                                C
-                                D
-                                E
-                                F
-                                G
-                                H
-                                I
-                                J
-                                L
-                                M
-                                O
-                                P
-                                Q
-                                R
-                                S
-                                T
-                                U
-                                V
-                                W
-                                Z
-                                SELECTORS
-                                A
-                                B
-                                C
-                                D
-                                E
-                                F
-                                G
-                                H
-                                I
-                                L
-                                M
-                                N
-                                O
-                                P
-                                R
-                                S
-                                T
-                                U
-                                V
-                                W
-                                Build and deploy apps at scale. Focus on your apps, not infrastructure. Try DigitalOcean
-                                for
-                                free.
-                                Get your apps to market faster with DigitalOcean's App Platform. Build, deploy, and
-                                scale
-                                apps quickly using a simple, fully managed solution. We’ll handle the infrastructure,
-                                app
-                                runtimes and dependencies, so that you can push code to production in just a few clicks.
-                                Ad for Mailchimp
-                                SPONSORED
-                                Get personalized content recommendations to make your emails more engaging. Sign up now.
-
-                                Ad for Squarespace
-                                SPONSORED
-                                Squarespace has the templates, designer fonts, and color palettes to fit your personal
-                                style.
-
-                                ads via Carbon
-                                Write Articles, Earn Bitcoin. Answer Questions, Earn Bitcoin. Start Earning.
-                                ads via Carbon
-                                DigitalOcean joining forces with CSS-Tricks! Special welcome offer: get $100 of free
-                                credit.
-                                Comments
-                                Jiayang Shen
-                                Permalink to comment# March 4, 2013
-                                It seems that “webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;”all has no
-                                effect.
-                                And is there hyphens property in the css specification?
-
-                                Reply
-                                Zach
-                                Permalink to comment# July 18, 2013
-                                I have the same problem too Jiayang…
-
-                                Harley Urquhart
-                                Permalink to comment# December 23, 2018
-                                you have not typed
-                                -webkit-hyphens: auto;
-                                instead you typed
-                                webkit-hyphens:auto;
-
-                                that’s where your error is. if you make an error in css all the following styles are
-                                disregarded
-
-                                karma
-                                Permalink to comment# July 20, 2013
-                                chrome does not supported it.
-
-                                http://caniuse.com/css-hyphens
-
-                                Reply
-                                Antti
-                                Permalink to comment# November 8, 2013
-                                Apparently IE10 supports prefixed hyphens property, so a more complete one would be:
-
-                                -ms-word-break: break-all;
-                                word-break: break-all;
-
-                                /* Non standard for webkit */
-                                word-break: break-word;
-
-                                -webkit-hyphens: auto;
-                                -moz-hyphens: auto;
-                                -ms-hyphens: auto;
-                                hyphens: auto;
-                            </p>
+                            <div class="texts">
+                                <h2>
+                                    Pong
+                                </h2>
+                                <img width="360" height="240" src="images/pong.png" alt="ficsc">
+                                <p>
+                                   Pong was my favourite game when I was 3 years old. I used to play it on my dads phone and since it has a simple and straightforward mechanic, I decide to use that as my first game in unity.
+    
+    
+    
+                                </p>
+    
+                                <iframe width="360" height="240"  src="https://www.youtube.com/embed/G-RdAhGYDYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+                                <p> Originally its a simple pong game with the same mechanics, except there is never a winner. That is because the AI was designed to be invincible due to testing reasons, so making winning or losing will be pointless
+                                    . I tried to implement a timer to make it more survival-ish but thats very boring. Later i just kept it like that because ive been making new stuff.
+    
+                                </p>
+    
+                                <iframe width="360" height="240"  src="https://www.youtube.com/embed/t9izgia0pOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p>
+                                    In the last day of grade 10 school,  I brought my laptop to school. Then I somehow changed the stuff in pong to political figures in HK lol, Carrie Lam vs President Xi using a testicle. Wonderful.
+                                </p>
+                            </div>
+                            
+                    
 
                         </div>
                     </div>
@@ -934,189 +884,25 @@ function appear(){
                     </button>
                     <div class="scroll-div">
                         <div class="scrol-oject">
-                            <h2>
-                                project 4
-                            </h2>
-                            <img src="images/DiscordLogo.png" alt="ficsc">
+                            <div class="texts">
+                                <h2>
+                                    space shooter - squares
+                                </h2>
+                                <img src="images/box shooter logo.png" alt="ficsc">
+                                <p>
+                                  Another classic game. This time from spaceshooters. Early mechanics were when the boss drop below 60% hp it will summon two jets, helping him beat the player.
+                                </p>
+                                <iframe width="360" height="240" src="https://www.youtube.com/embed/2kMLrHSQEww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p>
+                                    After a while, I developed a weapon selecting system despite there were only 2 available options. Heres a gameplay of another weapon "canonball".
+                                </p>
+                                <iframe width="360" height="240" src="https://www.youtube.com/embed/Nzwp2405A_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
                             <p>
-                                The word-break property in CSS can be used to change when line breaks ought to occur.
-                                Normally, line breaks in text can only occur in certain spaces, like when there is a
-                                space
-                                or a hyphen.
-
-
-                                In the example below we can make the word-break between letters instead:
-
-                                .element {
-                                word-break: break-all;
-                                }
-                                If we then set the width of the text to one em, the word will break by each letter:
-
-
-                                This value is often used in places with user generated content so that long strings
-                                don’t
-                                risk breaking the layout. One very common example is a long copy and pasted URL. If that
-                                URL
-                                has no hyphens, it can extend beyond the parent box and look bad or worse, cause layout
-                                problems.
-
-
-                                Values
-                                normal: use the default rules for word breaking.
-                                break-all: any word/letter can break onto the next line.
-                                keep-all: for Chinese, Japanese and Korean text words are not broken. Otherwise this is
-                                the
-                                same as normal.
-                                This property is also often used in conjunction with the hyphens property so that when
-                                breaks occur a hypen is inserted, as per the standard in books.
-
-                                The full usage, with needed vendor prefixes, is:
-
-                                -ms-word-break: break-all;
-                                word-break: break-all;
-
-                                /* Non standard for WebKit */
-                                word-break: break-word;
-
-                                -webkit-hyphens: auto;
-                                -moz-hyphens: auto;
-                                hyphens: auto;
-                                Using these properties on the universal selector can be useful if you have a site with a
-                                lot
-                                of user-generated content. Although fair warning, it can look weird on titles and
-                                pre-formatted text (
-
-
-                                ).
-                                Related
-                                overflow-wrap
-                                hyphens
-                                white-space
-                                Handling Long Words and URLs
-                                Browser Support
-                                This browser support data is from Caniuse, which has more detail. A number indicates
-                                that
-                                browser supports the feature at that version and up.
-
-                                Desktop
-                                Chrome Firefox IE Edge Safari
-                                23 49 11 18 6.1
-                                Mobile / Tablet
-                                Android Chrome Android Firefox Android iOS Safari
-                                104 101 4.4 7.0-7.1
-                                Safari and iOS support the break-all value but not keep-all
-
-                                PROPERTIES
-                                A
-                                B
-                                C
-                                D
-                                E
-                                F
-                                G
-                                H
-                                I
-                                J
-                                L
-                                M
-                                O
-                                P
-                                Q
-                                R
-                                S
-                                T
-                                U
-                                V
-                                W
-                                Z
-                                SELECTORS
-                                A
-                                B
-                                C
-                                D
-                                E
-                                F
-                                G
-                                H
-                                I
-                                L
-                                M
-                                N
-                                O
-                                P
-                                R
-                                S
-                                T
-                                U
-                                V
-                                W
-                                Build and deploy apps at scale. Focus on your apps, not infrastructure. Try DigitalOcean
-                                for
-                                free.
-                                Get your apps to market faster with DigitalOcean's App Platform. Build, deploy, and
-                                scale
-                                apps quickly using a simple, fully managed solution. We’ll handle the infrastructure,
-                                app
-                                runtimes and dependencies, so that you can push code to production in just a few clicks.
-                                Ad for Mailchimp
-                                SPONSORED
-                                Get personalized content recommendations to make your emails more engaging. Sign up now.
-
-                                Ad for Squarespace
-                                SPONSORED
-                                Squarespace has the templates, designer fonts, and color palettes to fit your personal
-                                style.
-
-                                ads via Carbon
-                                Write Articles, Earn Bitcoin. Answer Questions, Earn Bitcoin. Start Earning.
-                                ads via Carbon
-                                DigitalOcean joining forces with CSS-Tricks! Special welcome offer: get $100 of free
-                                credit.
-                                Comments
-                                Jiayang Shen
-                                Permalink to comment# March 4, 2013
-                                It seems that “webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;”all has no
-                                effect.
-                                And is there hyphens property in the css specification?
-
-                                Reply
-                                Zach
-                                Permalink to comment# July 18, 2013
-                                I have the same problem too Jiayang…
-
-                                Harley Urquhart
-                                Permalink to comment# December 23, 2018
-                                you have not typed
-                                -webkit-hyphens: auto;
-                                instead you typed
-                                webkit-hyphens:auto;
-
-                                that’s where your error is. if you make an error in css all the following styles are
-                                disregarded
-
-                                karma
-                                Permalink to comment# July 20, 2013
-                                chrome does not supported it.
-
-                                http://caniuse.com/css-hyphens
-
-                                Reply
-                                Antti
-                                Permalink to comment# November 8, 2013
-                                Apparently IE10 supports prefixed hyphens property, so a more complete one would be:
-
-                                -ms-word-break: break-all;
-                                word-break: break-all;
-
-                                /* Non standard for webkit */
-                                word-break: break-word;
-
-                                -webkit-hyphens: auto;
-                                -moz-hyphens: auto;
-                                -ms-hyphens: auto;
-                                hyphens: auto;
+                                After developing these stuff I stopped for a while because final exam was coming, turns out I start a new project instead of continuing this one.
                             </p>
-
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
