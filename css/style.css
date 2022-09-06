@@ -423,21 +423,13 @@ section {
 .guitar .guitar--boxContainer .guitar--box .guitar--content .guitar--icons {
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: space-between;
   margin-top: 20px;
   padding-top: 15px;
   border-top: 1px solid #334;
 }
 
-.guitar
-  .guitar--boxContainer
-  .guitar--box
-  .guitar--content
-  .guitar--icons
-  span
-  i {
-  color: darkblue;
-}
+
 
 #load-more {
   margin-top: 20px;
@@ -504,6 +496,8 @@ background:var(--clr-accent);
   flex-direction: column;
   position: relative;
   z-index: 100;
+  padding-left:10%;
+  padding-right: 10%;
 
   object-fit: cover;
 }
@@ -519,8 +513,8 @@ background:var(--clr-accent);
 .codingPro .card .image img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: contain;
+  border-radius: 5px;
 }
 
 .codingPro .card .dateIcon {
@@ -540,8 +534,8 @@ background:var(--clr-accent);
 .scroll-bg {
   display: none;
   border: 5px solid var(--clr-accent);
-  width: 500px;
-  height: 700px;
+  width: 700px;
+  height: 720px;
   background-color: var(--clr-light);
   margin-left: auto;
   margin-right: auto;
@@ -562,15 +556,35 @@ background:var(--clr-accent);
   right: 0px;
 }
 .scroll-div {
+  display: flex;
   overflow: hidden;
   overflow-y: scroll;
   width: auto;
   margin-left: auto;
   margin-right: auto;
-  height: 700px;
-  word-break: break-all;
+  height: 800px;
+  word-break: break-word;
   padding: 60px;
   overscroll-behavior: contain;
+  justify-content: center;
+  
+}
+
+
+.scrol-oject{
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ flex-direction: column;
+}
+
+.scroll-div .scrol-oject img
+{
+  transition: 0.5s;
+}
+.scroll-div .scrol-oject img:hover{
+ transform: scale(2);
+ transition: 0.3s;
 }
 
 /* .parentDisable{
