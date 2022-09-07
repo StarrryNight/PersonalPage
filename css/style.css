@@ -243,7 +243,6 @@ canvas {
 .middle{
   background-color: rgba(255, 255, 255, 0.625);
   margin-top: 60vh;
-  width: 100vw;
 }
 .status  {
   height: 100vh;
@@ -303,19 +302,20 @@ canvas {
   
   position: relative;
   width: 100vw;
-  height: auto;
+  height: 110vh;
   padding: 0px;
 }
 .onGoingProjectDecription{
   position: absolute;
-  bottom:0;
+  padding-bottom: 2vh;
+  margin-top: 2vh;;
+  bottom: 0;
 }
 .slideshowimages{
   height: 100vh;
   z-index: 10000;
   position:absolute;
   overflow: contain;
-  padding-bottom: 50px;
 }
 .slideshowimages.notshowing{
   opacity: 0;
@@ -337,7 +337,7 @@ canvas {
 
   margin-left: auto;
   margin-right: auto;
-  padding: 5vw;
+  padding: 30px;
   margin: 40px;
   justify-content: center;
 }
@@ -349,7 +349,7 @@ canvas {
   max-height: fit-content;
 }
 .IAmA {
-  padding: 20px;
+  padding: 2vh;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px));
@@ -357,7 +357,7 @@ canvas {
   grid-template-areas: "guitarist pro soc gam ";
 }
 section {
-  padding: 5rem 2rem;
+  padding: 2rem 2rem;
 }
 
 .guitarist {
