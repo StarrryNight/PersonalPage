@@ -243,6 +243,7 @@ canvas {
 .middle{
   background-color: rgba(255, 255, 255, 0.625);
   margin-top: 60vh;
+  width: 100vw;
 }
 .status  {
   height: 100vh;
@@ -298,7 +299,36 @@ canvas {
   margin-bottom: 1em;
 }
 
+.onGoing{
+  
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+}
+.onGoingProjectDecription{
+  position: absolute;
+  bottom:0;
+}
+.slideshowimages{
+  height: 100vh;
+  z-index: 10000;
+  position:absolute;
+  overflow: contain;
+  padding-bottom: 50px;
+}
+.slideshowimages.notshowing{
+  opacity: 0;
+  
+  transition: 0.8s;
 
+}
+/* onGoing*/
+.slideshowimages.showing{
+  
+  opacity: 1;
+  transition: 0.8s;
+}
 
 /* intro */
 .aboutMe {
