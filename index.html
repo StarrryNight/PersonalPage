@@ -32,7 +32,7 @@
             <input id="sliderRange" type="range" min="0" max="15" value="5" oninput="showValRange(this.value)">
             <h5>Frequency</h5>
             <input id="sliderFre" type="range" min="0" max="150" value="50" oninput="showVal(this.value)">
-            
+
         </div>
         <section class="nav-section">
             <div class="nav">
@@ -44,6 +44,16 @@
                                 <ion-icon name="home-outline"></ion-icon>
                             </span>
                             <span class="text">Home</span>
+
+                        </a>
+                    </li>
+                    <li onclick="checkC(this)" class="nav__item">
+                        <a href="#ong" class="nav__link">
+
+                            <span class="icon">
+                                <ion-icon name="hammer-outline"></ion-icon>
+                            </span>
+                            <span class="text">Ongoing Projects</span>
 
                         </a>
                     </li>
@@ -67,7 +77,7 @@
 
                         </a>
                     </li>
-                    <li onclick="checkC(this)"  class="nav__item">
+                    <li onclick="checkC(this)" class="nav__item">
                         <a href="#codingPro" class="nav__link">
 
                             <span class="icon">
@@ -88,16 +98,7 @@
 
                         </a>
                     </li>
-                    <li onclick="checkC(this)" class="nav__item">
-                        <a href="#OngoingProjects" class="nav__link">
 
-                            <span class="icon">
-                                <ion-icon name="hammer-outline"></ion-icon>
-                            </span>
-                            <span class="text">Ongoing Projects</span>
-
-                        </a>
-                    </li>
                     <li onclick="checkC(this)" class="nav__item">
                         <a href="#contact" class="nav__link">
 
@@ -110,7 +111,7 @@
                         </a>
                     </li>
                     <li onclick="checkC(this)" class="nav__item icon">
-                        <a  class="nav__link">
+                        <a class="nav__link">
 
                             <span class="icon control">
                                 <ion-icon name="square-outline"></ion-icon>
@@ -132,48 +133,49 @@
         </section>
 
         <script>
-var nav = document.querySelectorAll('.nav');
-var nnum=0;
-
-    
-    
-window.addEventListener('mousemove', navAppear, {once : true});
-function navAppear(){
-    setTimeout(appear,3000);
-    
-
-}
-
-const newspaperSpinning = [
-  { transform: 'rotate(0) scale(0)' },
-  { transform: 'rotate(360deg) scale(1)' }
-];
-
-const newspaperTiming = {
-  duration:2000,
-  
-}
-
-function appear(){
-    nav[0].style.display='flex';
-    nav[0].animate(newspaperSpinning, newspaperTiming);
-}
+            var nav = document.querySelectorAll('.nav');
+            var nnum = 0;
 
 
-            let f= document.getElementById("hii");
-           function checkC(s){
-            
-            if(s.classList.contains("icon")){
-                    f.style.display="inline-block";
+
+            window.addEventListener('mousemove', navAppear, { once: true });
+            function navAppear() {
+                setTimeout(appear, 3000);
+
+
+            }
+
+            const newspaperSpinning = [
+                { transform: 'rotate(0) scale(0)' },
+                { transform: 'rotate(360deg) scale(1)' }
+            ];
+
+            const newspaperTiming = {
+                duration: 2000,
+
+            }
+
+            function appear() {
+                nav[0].style.display = 'flex';
+                nav[0].animate(newspaperSpinning, newspaperTiming);
+            }
+
+
+            let f = document.getElementById("hii");
+            function checkC(s) {
+
+                if (s.classList.contains("icon")) {
+                    f.style.display = "inline-block";
                     console.log(f.style.display);
                     console.log("hi");
                     console.log(f);
                 }
                 else {
-                    f.style.display="none";
+                    f.style.display = "none";
                     console.log('ho');
-                }}
-            
+                }
+            }
+
 
             ;
             const list = document.querySelectorAll('.nav__item');
@@ -181,17 +183,25 @@ function appear(){
                 list.forEach((item) =>
                     item.classList.remove('active'));
                 this.classList.add('active');
-                
+
             }
             list.forEach((item) =>
                 item.addEventListener('click', activeLink));
         </script>
+        <!--Ongoing projects-->
+       
+
+
+
+
+
+
 
         <!-- introduction-->
         <section class="intro" id="home">
             <div class="status">
                 <div class="back">
-                    
+
                 </div>
                 <div class="container">
                     <div class="text">
@@ -215,8 +225,8 @@ function appear(){
                     1000
                 )
                 camera.position.z = 5;
-                var renderer = new THREE.WebGLRenderer({ alpha:true, anitalias:true});
-               
+                var renderer = new THREE.WebGLRenderer({ alpha: true, anitalias: true });
+
                 renderer.setSize(window.innerWidth, window.innerHeight);
 
                 document.body.appendChild(renderer.domElement);
@@ -234,15 +244,15 @@ function appear(){
                 var rangeY = new THREE.Vector2();
                 var material = new THREE.MeshLambertMaterial({ color: 0xFFCC00 });
                 var mesh = new THREE.Mesh(geometry, material);
-                var FreeVal=50;
-                function showVal(s){
-                    FreeVal=s;
-                }var FreeRange=5;
-                function showValRange(s){
-                    FreeRange=s;
+                var FreeVal = 50;
+                function showVal(s) {
+                    FreeVal = s;
+                } var FreeRange = 5;
+                function showValRange(s) {
+                    FreeRange = s;
                 }
-                
-              
+
+
 
                 function myFunction() {
                     Freeval = document.getElementById("sliderFre").value //gets the oninput value
@@ -255,10 +265,10 @@ function appear(){
 
 
 
-                function removeC(c){
+                function removeC(c) {
                     scene.remove(c);
-                   
-                    
+
+
                 }
                 var light = new THREE.PointLight(0xFFFFFF, 1, 500);
                 light.position.set(10, 0, 25);
@@ -266,22 +276,22 @@ function appear(){
                 var renderc = function () {
                     requestAnimationFrame(renderc);
                     // console.log(mouse.x,mouse.y);
-                    if (probability(.2 * FreeVal/80)) {
+                    if (probability(.2 * FreeVal / 80)) {
                         var b = new THREE.Mesh(geometry, material);
-                        var bPos = new THREE.Vector2(Math.random() *FreeRange/2 + rangeX.x * FreeRange, (Math.random() *FreeRange/2 + rangeY.x * FreeRange));
+                        var bPos = new THREE.Vector2(Math.random() * FreeRange / 2 + rangeX.x * FreeRange, (Math.random() * FreeRange / 2 + rangeY.x * FreeRange));
 
 
 
                         scene.add(b);
-                       
+
                         b.position.x = bPos.x;
                         b.position.y = bPos.y;
 
-                      
+
                         this.tl = new TimelineMax();
                         this.tl.to(b.scale, 1, { x: Math.random() * 1.5, y: Math.random() * 1.5, ease: Expo.easeOut });
                         this.tl.to(b.scale, 1, { x: 0.01, y: 0.01, z: 0.01, ease: Expo.easeOut });
-                        this.tl.call(removeC,[b]);
+                        this.tl.call(removeC, [b]);
                         // while(b.scale.x!=0.1){
                         //     if(b.scale.x==0.1){
                         //         scene.remove(b);
@@ -291,7 +301,7 @@ function appear(){
                     renderer.render(scene, camera);
 
                 }
-                
+
 
 
 
@@ -317,6 +327,74 @@ function appear(){
     <div class="backgroundLayer"></div>
 
     <div class="middle">
+
+
+        <section class="onGoing" id="ong">
+            <div class="ongoing-1">
+
+                <div class="imageContainer">
+                    <img class="slideshowimages showing" width="100%" height="100%"  src="images/Vocab Scanner2.png">
+                    <img class="slideshowimages notshowing" width="100%" height="100%" src="images/Vocab Scanner.png">
+                    <img class="slideshowimages notshowing" width="100%" height="100%" src="images/vocabs.jpg">
+                    <img class="slideshowimages notshowing" width="100%" height="100%" src="images/Problems.png">
+                    <img class="slideshowimages notshowing"  width="100%" height="100%" src="images/Vocab Scanner2.png">
+                    <img class="slideshowimages notshowing" width="100%" height="100%" src="images/Problems.png">
+                    <img class="slideshowimages notshowing" width="100%" height="100%" src="images/Vocab Scanner.png">
+                    <img class="slideshowimages notshowing" width="100%" height="100%" src="images/Problems.png">
+
+
+                </div>
+                <div class="onGoingProjectDecription">
+                    <marquee>
+                        <h3>v
+                            A 2d shooter asffffffffffffffffffffvfvfffffffffffvvfffffffffffffffvvfffffffffffvfffffvffffffffffffffffffffffffffvffffffffffffvfvffffvfffffffffffffffffffffffffff
+                        </h3>
+                    </marquee>
+                    
+                </div>
+            </div>
+
+            <Script>
+                console.log("hi");
+                var current = 0;
+                var picsForSlideshow = document.querySelectorAll(".slideshowimages");
+                const slideShowAppear = [{ opacity: 1 }];
+                const slideShowDisappear = [{ opacity: 0 }];
+                for(var i=0;i<picsForSlideshow.length;i++){
+                    console.log(picsForSlideshow[i].classList);
+                }
+               function slideShow() {
+                    console.log(current);
+                    picsForSlideshow[current].classList.remove("showing");
+                    picsForSlideshow[current].classList.add("notshowing");
+                    picsForSlideshow[0].animate(slideShowDisappear, 1000);
+                    if (current + 1 == picsForSlideshow.length-1) {
+                        picsForSlideshow[current].classList.add("notshowing");
+                        picsForSlideshow[current].classList.remove("showing");
+                        current = 0;
+                        picsForSlideshow[current].classList.add("showing");
+                        picsForSlideshow[current].classList.remove("notshowing");
+                        
+                    }
+                    else {
+                        picsForSlideshow[current + 1].classList.add("showing");
+                        picsForSlideshow[current+1].classList.remove("notshowing");
+                        picsForSlideshow[current].classList.remove("showing");
+                        picsForSlideshow[current].classList.add("notshowing");
+                        current++;
+                    }
+                    
+
+                    setTimeout(
+                        slideShow, 4500);
+                };
+
+                slideShow();
+
+
+                
+            </Script>
+        </section>
         <!-- about me-->
         <section class="aboutMe" id="aboutMe">
             <h1 class="section__title section__title--intro">
@@ -387,14 +465,19 @@ function appear(){
             <div class="guitar--boxContainer">
                 <!--piece1-->
                 <div class="guitar--box">
-                    <iframe width="320" height="240" src="https://www.youtube.com/embed/GpK6oxRbvqA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>>
+                    <iframe width="320" height="240" src="https://www.youtube.com/embed/GpK6oxRbvqA"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>>
                     </iframe>
                     <div class="guitar--content">
                         <h3>Unravel</h3>
                         <P>Cover Arranged by Sungha Jung</P>
                         <a href="#" class="guitar--readmore">read more</a>
                         <div class="guitar--icons">
-                            <span><ion-icon name="musical-note-outline"></ion-icon> Tuning: Standard (Capo fret 3)</span>
+                            <span>
+                                <ion-icon name="musical-note-outline"></ion-icon> Tuning: Standard (Capo fret 3)
+                            </span>
                             <span> <i class="fas fa-calendar"></i> 5th September, 2022 </span>
 
                         </div>
@@ -403,14 +486,19 @@ function appear(){
 
                 <!--piece2-->
                 <div class="guitar--box">
-                    <iframe width="320" height="240" src="https://www.youtube.com/embed/RtCJpe8QOwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
+                    <iframe width="320" height="240" src="https://www.youtube.com/embed/RtCJpe8QOwo"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>>
                     </iframe>
                     <div class="guitar--content">
                         <h3>Flaming</h3>
                         <P>Song composed by Sungha Jung</P>
                         <a href="#" class="guitar--readmore">read more</a>
                         <div class="guitar--icons">
-                            <span><ion-icon name="musical-note-outline"></ion-icon> Tuning: Half-step-down</span>
+                            <span>
+                                <ion-icon name="musical-note-outline"></ion-icon> Tuning: Half-step-down
+                            </span>
                             <span> <i class="fas fa-calendar"></i> 5th September,2022</span>
 
                         </div>
@@ -420,14 +508,19 @@ function appear(){
                 <!--piece3-->
 
                 <div class="guitar--box">
-                    <iframe width="320" height="240" src="https://www.youtube.com/embed/Cu8dA9geVtw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>>
+                    <iframe width="320" height="240" src="https://www.youtube.com/embed/Cu8dA9geVtw"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>>
                     </iframe>
                     <div class="guitar--content">
                         <h3>Fight!</h3>
                         <P>Song composed by Kotaro Oshio</P>
                         <a href="#" class="guitar--readmore">read more</a>
                         <div class="guitar--icons">
-                            <span><ion-icon name="musical-note-outline"></ion-icon> Tuning: Half-step-down</span>
+                            <span>
+                                <ion-icon name="musical-note-outline"></ion-icon> Tuning: Half-step-down
+                            </span>
                             <span> <i class="fas fa-calendar"></i> 5th September,2022 </span>
 
                         </div>
@@ -437,14 +530,19 @@ function appear(){
                 <!--piece4-->
 
                 <div class="guitar--box">
-                    <iframe width="320" height="240" src="https://www.youtube.com/embed/Y9gCIuc09xQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="320" height="240" src="https://www.youtube.com/embed/Y9gCIuc09xQ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     </iframe>
                     <div class="guitar--content">
                         <h3>Gurenge</h3>
                         <P>Cover arranged by Sungha Jung</P>
                         <a href="#" class="guitar--readmore">read more</a>
                         <div class="guitar--icons">
-                            <span><ion-icon name="musical-note-outline"></ion-icon> Tuning: Standard</span>
+                            <span>
+                                <ion-icon name="musical-note-outline"></ion-icon> Tuning: Standard
+                            </span>
                             <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
 
                         </div>
@@ -491,7 +589,7 @@ function appear(){
         </h2>
         <!--projects-->
 
-        <section class="codingPro" >
+        <section class="codingPro">
             <div class="projectContainer swiper mySwiper">
                 <div class="content swiper-wrapper">
                     <div class="card swiper-slide" onclick="hi(this.id)">
@@ -691,14 +789,16 @@ function appear(){
                             </h2>
                             <img width="340px" height="240px" src="images/Problems.png" alt="ficsc">
                             <p>
-                               The CCC is a computing competision held by the University of Waterloo. I have been doing past papers in the summer to enhance my knowledge in java. I can do up to the Senior paper question 2s because the datastructures has gone too hard lol.
+                                The CCC is a computing competision held by the University of Waterloo. I have been doing
+                                past papers in the summer to enhance my knowledge in java. I can do up to the Senior
+                                paper question 2s because the datastructures has gone too hard lol.
                             </p>
 
                         </div>
                     </div>
                 </div>
 
-                
+
 
                 <!--project 2-->
                 <div class="scroll-bg">
@@ -711,21 +811,24 @@ function appear(){
                                 <h2>
                                     Vocab meaning/quote generator
                                 </h2>
-                                <img width="360px" height="240px"  src="images/Vocab Scanner.png" alt="ficsc">
+                                <img width="360px" height="240px" src="images/Vocab Scanner.png" alt="ficsc">
                                 <p>
-                                   When I was grade 10, I have a homework that needs me to find the meaning and quotation from the book for 30-40 of vocabs. In order to not waste my time, I used java and the jsoup library to find the meanings and quotation with just the input of vocabs in the console. You have to provide the text to find quotations in tho.
+                                    When I was grade 10, I have a homework that needs me to find the meaning and
+                                    quotation from the book for 30-40 of vocabs. In order to not waste my time, I used
+                                    java and the jsoup library to find the meanings and quotation with just the input of
+                                    vocabs in the console. You have to provide the text to find quotations in tho.
                                 </p>
                                 <p>here is the example of the output
-    
-                                    
+
+
                                 </p>
 
 
                                 <img width="360px" height="240px" src="images/Vocab Scanner2.png">
-                                
+
                                 <div class="snip">
-                                <p> <code class="snippet">
-                                    
+                                    <p> <code class="snippet">
+
                                         package vocabMeanings;
 
 
@@ -824,13 +927,13 @@ public class vacabs {
 
                                 </code></p>
 
+                                </div>
+
                             </div>
-                               
-                            </div>
-                           
+
 
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -849,26 +952,39 @@ public class vacabs {
                                 </h2>
                                 <img width="360" height="240" src="images/pong.png" alt="ficsc">
                                 <p>
-                                   Pong was my favourite game when I was 3 years old. I used to play it on my dads phone and since it has a simple and straightforward mechanic, I decide to use that as my first game in unity.
-    
-    
-    
+                                    Pong was my favourite game when I was 3 years old. I used to play it on my dads
+                                    phone and since it has a simple and straightforward mechanic, I decide to use that
+                                    as my first game in unity.
+
+
+
                                 </p>
-    
-                                <iframe width="360" height="240"  src="https://www.youtube.com/embed/G-RdAhGYDYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-                                <p> Originally its a simple pong game with the same mechanics, except there is never a winner. That is because the AI was designed to be invincible due to testing reasons, so making winning or losing will be pointless
-                                    . I tried to implement a timer to make it more survival-ish but thats very boring. Later i just kept it like that because ive been making new stuff.
-    
+
+                                <iframe width="360" height="240" src="https://www.youtube.com/embed/G-RdAhGYDYE"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+
+                                <p> Originally its a simple pong game with the same mechanics, except there is never a
+                                    winner. That is because the AI was designed to be invincible due to testing reasons,
+                                    so making winning or losing will be pointless
+                                    . I tried to implement a timer to make it more survival-ish but thats very boring.
+                                    Later i just kept it like that because ive been making new stuff.
+
                                 </p>
-    
-                                <iframe width="360" height="240"  src="https://www.youtube.com/embed/t9izgia0pOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                <iframe width="360" height="240" src="https://www.youtube.com/embed/t9izgia0pOE"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                                 <p>
-                                    In the last day of grade 10 school,  I brought my laptop to school. Then I somehow changed the stuff in pong to political figures in HK lol, Carrie Lam vs President Xi using a testicle. Wonderful.
+                                    In the last day of grade 10 school, I brought my laptop to school. Then I somehow
+                                    changed the stuff in pong to political figures in HK lol, Carrie Lam vs President Xi
+                                    using a testicle. Wonderful.
                                 </p>
                             </div>
-                            
-                    
+
+
 
                         </div>
                     </div>
@@ -890,19 +1006,28 @@ public class vacabs {
                                 </h2>
                                 <img src="images/box shooter logo.png" alt="ficsc">
                                 <p>
-                                  Another classic game. This time from spaceshooters. Early mechanics were when the boss drop below 60% hp it will summon two jets, helping him beat the player.
+                                    Another classic game. This time from spaceshooters. Early mechanics were when the
+                                    boss drop below 60% hp it will summon two jets, helping him beat the player.
                                 </p>
-                                <iframe width="360" height="240" src="https://www.youtube.com/embed/2kMLrHSQEww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="360" height="240" src="https://www.youtube.com/embed/2kMLrHSQEww"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                                 <p>
-                                    After a while, I developed a weapon selecting system despite there were only 2 available options. Heres a gameplay of another weapon "canonball".
+                                    After a while, I developed a weapon selecting system despite there were only 2
+                                    available options. Heres a gameplay of another weapon "canonball".
                                 </p>
-                                <iframe width="360" height="240" src="https://www.youtube.com/embed/Nzwp2405A_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-                            <p>
-                                After developing these stuff I stopped for a while because final exam was coming, turns out I start a new project instead of continuing this one.
-                            </p>
+                                <iframe width="360" height="240" src="https://www.youtube.com/embed/Nzwp2405A_g"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+
+                                <p>
+                                    After developing these stuff I stopped for a while because final exam was coming,
+                                    turns out I start a new project instead of continuing this one.
+                                </p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -1153,14 +1278,14 @@ public class vacabs {
                 </h1>
                 <div class="dropdown">
                     <button class="dropbtn">Dropdown
-                      <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                      <a  onclick="change('apex')">apex</a>
-                      <a onclick="change('pes')">pes</a>
-                      <a >fuck</a>
+                        <a onclick="change('apex')">apex</a>
+                        <a onclick="change('pes')">pes</a>
+                        <a>fuck</a>
                     </div>
-                  </div>
+                </div>
             </header>
 
             <div class="gameContainer">
@@ -1274,7 +1399,7 @@ public class vacabs {
                         <iframe width="320" height="240" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                         </iframe>
                     </div>
-                    
+
                     <div class="game--content">
                         <h3>pes5</h3>
                         <div class="game--icons">
@@ -1295,33 +1420,33 @@ public class vacabs {
 
 
 
-        <script>
-            var apexs = document.querySelectorAll('.apex');
-            var pess = document.querySelectorAll('.pes');
-            function change(s){
-            if(s=='apex'){
-                console.log("changed to apex");
-                for(var i=0;i<pess.length;i++){
-                    pess[i].style.display ='none';
-                
-                   
+            <script>
+                var apexs = document.querySelectorAll('.apex');
+                var pess = document.querySelectorAll('.pes');
+                function change(s) {
+                    if (s == 'apex') {
+                        console.log("changed to apex");
+                        for (var i = 0; i < pess.length; i++) {
+                            pess[i].style.display = 'none';
+
+
+                        }
+                        for (var i = 0; i < apexs.length; i++) {
+                            apexs[i].style.display = 'inline-block';
+                        }
+
+                    }
+                    else if (s == 'pes') {
+                        for (var i = 0; i < apexs.length; i++) {
+                            apexs[i].style.display = 'none';
+                        }
+                        for (var i = 0; i < pess.length; i++) {
+                            pess[i].style.display = 'inline-block';
+                        }
+
+                    }
                 }
-                for(var i=0;i<apexs.length;i++){
-                    apexs[i].style.display = 'inline-block';
-                }
-                
-            }
-            else if(s=='pes'){
-                for(var i=0;i<apexs.length;i++){
-                    apexs[i].style.display ='none';
-                }
-                for(var i=0;i<pess.length;i++){
-                    pess[i].style.display = 'inline-block';
-                }
-               
-            }
-            }
-        </script>
+            </script>
         </section>
 
         <section class="contact" id="contact">
