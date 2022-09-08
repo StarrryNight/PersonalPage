@@ -92,7 +92,7 @@ h5 {
   background: transparent;
   
   position: fixed;
-  z-index: 100;
+  z-index: 99999;
   top: 0;
   left: 0;
 
@@ -242,7 +242,8 @@ canvas {
 }
 .middle{
   background-color: rgba(255, 255, 255, 0.625);
-  margin-top: 60vh;
+  margin-top: 100vh;
+  width: 100vw;
 }
 .status  {
   height: 100vh;
@@ -298,24 +299,46 @@ canvas {
   margin-bottom: 1em;
 }
 
+
+.onGoingTitle{
+  text-align: center;
+  padding-top:3%;
+}
 .onGoing{
   
-  position: relative;
+  
   width: 100vw;
   height: 110vh;
-  padding: 0px;
+ 
+  
 }
 .onGoingProjectDecription{
-  position: absolute;
-  padding-bottom: 2vh;
-  margin-top: 2vh;;
+  
+ padding-top: 70vh;
+  
   bottom: 0;
+  
+}
+
+.imageContainer{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+  width: 100vw;
+  
+  
 }
 .slideshowimages{
-  height: 100vh;
-  z-index: 10000;
+  
+  z-index: 9998;
   position:absolute;
-  overflow: contain;
+  overflow: hidden;
+  max-width: 60vw;
+  max-height: 50vw;
+  border: 10px solid var(--clr-accent);
+  border-radius: 5px;
+  
 }
 .slideshowimages.notshowing{
   opacity: 0;
@@ -357,7 +380,7 @@ canvas {
   grid-template-areas: "guitarist pro soc gam ";
 }
 section {
-  padding: 2rem 2rem;
+  
 }
 
 .guitarist {
@@ -573,7 +596,7 @@ background:var(--clr-accent);
   box-shadow: 0px 0px 1022px 5222px #3030307d;
 
   position: fixed;
-  z-index: 100;
+  z-index: 10000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -820,6 +843,7 @@ background:var(--clr-accent);
 
 
 .contact {
+  text-align: center;
 }
 
 .contactList {
@@ -830,9 +854,14 @@ background:var(--clr-accent);
   margin-top: 100px;
   grid-column-gap: 1em;
 
-  grid-template-columns: [line1] 300px [line2] 300px [line3];
-  grid-template-rows: [row1-start] 300px [row2-start] 300px [last-line];
+  grid-template-columns: repeat(auto-fill, minmax(400px));
   grid-template-areas:
     "Instagram discord"
     "github discord";
+    gap:20px;
+}
+
+.contactList img{
+  margin-left: auto;
+  margin-right: auto;
 }
