@@ -205,10 +205,10 @@
                 </div>
                 <div class="container">
                     <div class="text">
-                        Working on Canon rock, an html project, and preparing for IB........
+                        Working on Neon, an html project, and IB........
                     </div>
                     <div class="designed">
-                        this website is designed for desktop/laptop, not mobile
+                        This website is designed for desktop/laptop, not mobile
                         (PAGE IN CONSTRUCTION!)
                     </div>
                 </div>
@@ -334,21 +334,24 @@
                 <h2 class="onGoingTitle">Currently making...</h2>
 
                 <div class="imageContainer">
-                    <img class="slideshowimages showing"   src="images/Vocab Scanner2.png">
-                    <img class="slideshowimages notshowing"  src="images/Vocab Scanner.png">
-                    <img class="slideshowimages notshowing"  src="images/vocabs.jpg">
-                    <img class="slideshowimages notshowing"  src="images/Problems.png">
-                    <img class="slideshowimages notshowing"  src="images/Vocab Scanner2.png">
-                    <img class="slideshowimages notshowing"  src="images/Problems.png">
-                    <img class="slideshowimages notshowing" src="images/Vocab Scanner.png">
-                    <img class="slideshowimages notshowing"  src="images/Problems.png">
-
+                    <div class="im">
+                        <img class="slideshowimages showing"   src="images/current1.png"><h5 class=" Imagetext showing"> The adventure of square...</h5></img>
+                    <img class="slideshowimages notshowing"  src="images/current2.png"><h5 class="Imagetext notshowing"> kill circles...</h5></img>
+                    <img class="slideshowimages notshowing"  src="images/current3.png"><h5 class=" Imagetext notshowing"> use skills...</h5></img>
+                    <img class="slideshowimages notshowing"  src="images/current4.png"><h5 class=" Imagetext notshowing"> combine skills...</h5></img>
+                    <img class="slideshowimages notshowing"  src="images/current5.png"><h5 class=" Imagetext notshowing"> collect exp...</h5></img>
+                    <img class="slideshowimages notshowing"  src="images/current6.png"><h5 class=" Imagetext notshowing"> unlock new skills...</h5></img>
+                    <img class="slideshowimages notshowing" src="images/current7.png"><h5 class=" Imagetext notshowing"> mind your mana...</h5></img>
+                    </div>
+                    
+                  
+                    
 
                 </div>
                 <div class="onGoingProjectDecription">
                     <marquee>
-                        <h3>v
-                            A 2d shooter asffffffffffffffffffffvfvfffffffffffvvfffffffffffffffvvfffffffffffvfffffvffffffffffffffffffffffffffvffffffffffffvfvffffvfffffffffffffffffffffffffff
+                        <h3>
+                            In a world that is lack of art, you are a square sprite. Your mission is to kill every circle and collect exp. This is a 2d shooter, card game that is stupid.
                         </h3>
                     </marquee>
                     
@@ -358,26 +361,57 @@
             <Script>
                 console.log("hi");
                 var current = 0;
+                var textArray = document.querySelectorAll(".Imagetext");
                 var picsForSlideshow = document.querySelectorAll(".slideshowimages");
                 const slideShowAppear = [{ opacity: 1 }];
+
+                function showWord(a){
+
+                }
+
+
+
                 const slideShowDisappear = [{ opacity: 0 }];
                 for(var i=0;i<picsForSlideshow.length;i++){
                     console.log(picsForSlideshow[i].classList);
+
+
+
+
+
                 }
                function slideShow() {
                     console.log(current);
+                    textArray[current].classList.remove("showing");
+                    textArray[current].classList.add("notshowing");
+                    textArray[0].animate(slideShowDisappear, 1000);
                     picsForSlideshow[current].classList.remove("showing");
                     picsForSlideshow[current].classList.add("notshowing");
                     picsForSlideshow[0].animate(slideShowDisappear, 1000);
-                    if (current + 1 == picsForSlideshow.length-1) {
+                    if (current + 1 == picsForSlideshow.length) {
+                        textArray[current].classList.add("notshowing");
+                       textArray[current].classList.remove("showing");
                         picsForSlideshow[current].classList.add("notshowing");
                         picsForSlideshow[current].classList.remove("showing");
                         current = 0;
+                        textArray[current].classList.add("showing");
+                        textArray[current].classList.remove("notshowing");
+                        textArray[current].position = "absolute";
+                        textArray[current].style.top = reString(Math.floor(Math.random()*(100)));
+                        textArray[current].style.left = reString(Math.floor(Math.random()*100));
+                        
                         picsForSlideshow[current].classList.add("showing");
                         picsForSlideshow[current].classList.remove("notshowing");
                         
                     }
                     else {
+                        textArray[current + 1].classList.add("showing");
+                        textArray[current+1].classList.remove("notshowing");
+                        textArray[current].classList.remove("showing");
+                        textArray[current].classList.add("notshowing");
+                        textArray[current+1].position = "absolute";
+                        textArray[current+1].style.top = reString(Math.floor(Math.random()*100));
+                        textArray[current+1].style.left = reString(Math.floor(Math.random()*100));
                         picsForSlideshow[current + 1].classList.add("showing");
                         picsForSlideshow[current+1].classList.remove("notshowing");
                         picsForSlideshow[current].classList.remove("showing");
@@ -387,10 +421,17 @@
                     
 
                     setTimeout(
-                        slideShow, 4500);
+                        slideShow,5500);
                 };
-
+                
+                function reString(a){
+                    var b = a.toString()+"%";
+                    console.log(b);
+                    return b;
+                }
                 slideShow();
+
+                
 
 
                 
@@ -427,7 +468,7 @@
                     <p>
                         Casual programmer who love creating different projects such as websites, games, and useful
                         stuff(for
-                        myself). Languages I know are Java, c#, python, c++.
+                        myself). Languages I know are Java, c#, python, c++, html, css, javascript.
                     </p>
                     <a class="button" href="#codingPro">My projects</a>
                 </div>
