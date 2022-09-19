@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=1024px">
     <title>
         samuel personal website
     </title>
@@ -342,6 +342,7 @@
                     <img class="slideshowimages notshowing"  src="images/current5.png"><h5 class=" Imagetext notshowing"> collect exp...</h5></img>
                     <img class="slideshowimages notshowing"  src="images/current6.png"><h5 class=" Imagetext notshowing"> unlock new skills...</h5></img>
                     <img class="slideshowimages notshowing" src="images/current7.png"><h5 class=" Imagetext notshowing"> mind your mana...</h5></img>
+                    
                     </div>
                     
                   
@@ -388,7 +389,7 @@
                     picsForSlideshow[current].classList.remove("showing");
                     picsForSlideshow[current].classList.add("notshowing");
                     picsForSlideshow[0].animate(slideShowDisappear, 1000);
-                    if (current + 1 == picsForSlideshow.length) {
+                    if (current + 1 == picsForSlideshow.length-1) {
                         textArray[current].classList.add("notshowing");
                        textArray[current].classList.remove("showing");
                         picsForSlideshow[current].classList.add("notshowing");

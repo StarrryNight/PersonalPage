@@ -235,8 +235,8 @@ canvas {
   position: fixed;
   z-index: -1;
   top: 0;
-  right: 0;
-  display: block;
+  left: 0;
+  display: inline-block;
   width: 100vw;
   height: 100vh;
 }
@@ -399,7 +399,7 @@ canvas {
 
   margin-left: auto;
   margin-right: auto;
-  padding: 30px;
+  padding: 5vh;
   margin: 40px;
   justify-content: center;
 }
