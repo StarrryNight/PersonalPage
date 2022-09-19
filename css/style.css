@@ -884,6 +884,7 @@ background:var(--clr-accent);
 
 .contact {
   text-align: center;
+  padding: 5vw;
 }
 
 .contactList {
@@ -904,4 +905,10 @@ background:var(--clr-accent);
 .contactList img{
   margin-left: auto;
   margin-right: auto;
+}
+
+footer{
+  display: flex;
+  padding: 3vw;
+  justify-content: space-between;
 }
