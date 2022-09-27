@@ -754,6 +754,30 @@
                             <span> <i class="fas fa-calendar"></i> 7th September, 2022 </span>
                         </div>
                     </div>
+
+                    <div class="card swiper-slide" onclick="hi(this.id)">
+                        <div class="card-content ">
+                            <div class="image">
+                                <img src="images/deletorPic.png" alt="fuck">
+                            </div>
+
+                            <div class="project-name">
+                                <h3>
+                                    <span class="name">Tabs deletor</span>
+                                </h3>
+
+                            </div>
+                            <div class="category">
+                                <span class="category">
+                                    Category: extensions
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="dateIcon">
+                            <span> <i class="fas fa-calendar"></i> 26th September, 2022 </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -1098,6 +1122,28 @@ public class vacabs {
                         </div>
                     </div>
                 </div>
+
+
+                <div class="scroll-bg">
+                    <button class="exit" onclick="exit()">
+                        X
+                    </button>
+                    <div class="scroll-div">
+                        <div class="scrol-oject">
+                            <div class="texts">
+                                <h2>
+                                    Chrome extension -- tab deletor
+                                </h2>
+                                <img width="360" height="240" src="images/etensiongif.gif" alt="ficsc">
+                                <p>
+                                    Have you ever been in a shitty situation were you have tons of tab opened and don't know how to delete the ones you dont want... Well Im a messy person so Im always like that . So I made a simple extension that u can select the subdomains of the websites, choose what you dont want and delete them. Its a very simple concept yet its extremely useful for me. I just used javascript and some html and css for the popup in this project.
+                                </p>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -1105,7 +1151,7 @@ public class vacabs {
                 let codingPanels = [...document.querySelectorAll('.scroll-bg')];
 
                 var currentActive;
-                for (var i = 0; i < 5; i++) {
+                for (var i = 0; i < 6; i++) {
 
                     cards[i].setAttribute('id', i);
                 }
