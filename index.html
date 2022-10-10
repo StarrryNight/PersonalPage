@@ -189,7 +189,7 @@
                 item.addEventListener('click', activeLink));
         </script>
         <!--Ongoing projects-->
-       
+
 
 
 
@@ -206,6 +206,7 @@
                 <div class="container">
                     <div class="text">
                         Working on Neon, an html project, and IB........
+                        Just sayin but if you're a graphic designer or a guy who simply like to make sprites for games please dm me so I can stop using default sprites of unity.
                     </div>
                     <div class="designed">
                         This website is designed for desktop/laptop, not mobile
@@ -263,7 +264,7 @@
                     return !!n && Math.random() <= n;
                 };
 
-
+                var ifCat = false;
 
                 function removeC(c) {
                     scene.remove(c);
@@ -271,15 +272,18 @@
 
                 }
                 var light = new THREE.PointLight(0xFFFFFF, 1, 500);
+                var xaas=0;
                 light.position.set(10, 0, 25);
                 scene.add(light);
                 var renderc = function () {
                     requestAnimationFrame(renderc);
                     // console.log(mouse.x,mouse.y);
                     if (probability(.2 * FreeVal / 80)) {
+                        xaas++;
                         var b = new THREE.Mesh(geometry, material);
                         var bPos = new THREE.Vector2(Math.random() * FreeRange / 2 + rangeX.x * FreeRange, (Math.random() * FreeRange / 2 + rangeY.x * FreeRange));
 
+                       
 
 
                         scene.add(b);
@@ -304,6 +308,7 @@
 
 
 
+                
 
                 function onMouseMove(event) {
                     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -335,27 +340,35 @@
 
                 <div class="imageContainer">
                     <div class="im">
-                        <img class="slideshowimages showing"   src="images/current1.png"><h5 class=" Imagetext showing"> The adventure of square...</h5></img>
-                    <img class="slideshowimages notshowing"  src="images/current2.png"><h5 class="Imagetext notshowing"> kill circles...</h5></img>
-                    <img class="slideshowimages notshowing"  src="images/current3.png"><h5 class=" Imagetext notshowing"> use skills...</h5></img>
-                    <img class="slideshowimages notshowing"  src="images/current4.png"><h5 class=" Imagetext notshowing"> combine skills...</h5></img>
-                    <img class="slideshowimages notshowing"  src="images/current5.png"><h5 class=" Imagetext notshowing"> collect exp...</h5></img>
-                    <img class="slideshowimages notshowing"  src="images/current6.png"><h5 class=" Imagetext notshowing"> unlock new skills...</h5></img>
-                    <img class="slideshowimages notshowing" src="images/current7.png"><h5 class=" Imagetext notshowing"> mind your mana...</h5></img>
-                    
+                        <img class="slideshowimages showing" src="images/current1.png">
+                        <h5 class=" Imagetext showing"> The adventure of square...</h5></img>
+                        <img class="slideshowimages notshowing" src="images/current2.png">
+                        <h5 class="Imagetext notshowing"> kill circles...</h5></img>
+                        <img class="slideshowimages notshowing" src="images/current3.png">
+                        <h5 class=" Imagetext notshowing"> use skills...</h5></img>
+                        <img class="slideshowimages notshowing" src="images/current4.png">
+                        <h5 class=" Imagetext notshowing"> combine skills...</h5></img>
+                        <img class="slideshowimages notshowing" src="images/current5.png">
+                        <h5 class=" Imagetext notshowing"> collect exp...</h5></img>
+                        <img class="slideshowimages notshowing" src="images/current6.png">
+                        <h5 class=" Imagetext notshowing"> unlock new skills...</h5></img>
+                        <img class="slideshowimages notshowing" src="images/current7.png">
+                        <h5 class=" Imagetext notshowing"> mind your mana...</h5></img>
+
                     </div>
-                    
-                  
-                    
+
+
+
 
                 </div>
                 <div class="onGoingProjectDecription">
                     <marquee>
                         <h3>
-                            In a world that is lack of art, you are a square sprite. Your mission is to kill every circle and collect exp. This is a 2d shooter, card game that is stupid.
+                            In a world that is lack of art, you are a square sprite. Your mission is to kill every
+                            circle and collect exp. This is a 2d shooter, card game that is stupid.
                         </h3>
                     </marquee>
-                    
+
                 </div>
             </div>
 
@@ -366,14 +379,14 @@
                 var picsForSlideshow = document.querySelectorAll(".slideshowimages");
                 const slideShowAppear = [{ opacity: 1 }];
 
-                function showWord(a){
+                function showWord(a) {
 
                 }
 
 
 
                 const slideShowDisappear = [{ opacity: 0 }];
-                for(var i=0;i<picsForSlideshow.length;i++){
+                for (var i = 0; i < picsForSlideshow.length; i++) {
                     console.log(picsForSlideshow[i].classList);
 
 
@@ -381,7 +394,7 @@
 
 
                 }
-               function slideShow() {
+                function slideShow() {
                     console.log(current);
                     textArray[current].classList.remove("showing");
                     textArray[current].classList.add("notshowing");
@@ -389,53 +402,53 @@
                     picsForSlideshow[current].classList.remove("showing");
                     picsForSlideshow[current].classList.add("notshowing");
                     picsForSlideshow[0].animate(slideShowDisappear, 1000);
-                    if (current + 1 == picsForSlideshow.length-1) {
+                    if (current + 1 == picsForSlideshow.length - 1) {
                         textArray[current].classList.add("notshowing");
-                       textArray[current].classList.remove("showing");
+                        textArray[current].classList.remove("showing");
                         picsForSlideshow[current].classList.add("notshowing");
                         picsForSlideshow[current].classList.remove("showing");
                         current = 0;
                         textArray[current].classList.add("showing");
                         textArray[current].classList.remove("notshowing");
                         textArray[current].position = "absolute";
-                        textArray[current].style.top = reString(Math.floor(Math.random()*(100)));
-                        textArray[current].style.left = reString(Math.floor(Math.random()*100));
-                        
+                        textArray[current].style.top = reString(Math.floor(Math.random() * (100)));
+                        textArray[current].style.left = reString(Math.floor(Math.random() * 100));
+
                         picsForSlideshow[current].classList.add("showing");
                         picsForSlideshow[current].classList.remove("notshowing");
-                        
+
                     }
                     else {
                         textArray[current + 1].classList.add("showing");
-                        textArray[current+1].classList.remove("notshowing");
+                        textArray[current + 1].classList.remove("notshowing");
                         textArray[current].classList.remove("showing");
                         textArray[current].classList.add("notshowing");
-                        textArray[current+1].position = "absolute";
-                        textArray[current+1].style.top = reString(Math.floor(Math.random()*100));
-                        textArray[current+1].style.left = reString(Math.floor(Math.random()*100));
+                        textArray[current + 1].position = "absolute";
+                        textArray[current + 1].style.top = reString(Math.floor(Math.random() * 100));
+                        textArray[current + 1].style.left = reString(Math.floor(Math.random() * 100));
                         picsForSlideshow[current + 1].classList.add("showing");
-                        picsForSlideshow[current+1].classList.remove("notshowing");
+                        picsForSlideshow[current + 1].classList.remove("notshowing");
                         picsForSlideshow[current].classList.remove("showing");
                         picsForSlideshow[current].classList.add("notshowing");
                         current++;
                     }
-                    
+
 
                     setTimeout(
-                        slideShow,5500);
+                        slideShow, 5500);
                 };
-                
-                function reString(a){
-                    var b = a.toString()+"%";
+
+                function reString(a) {
+                    var b = a.toString() + "%";
                     console.log(b);
                     return b;
                 }
                 slideShow();
 
-                
 
 
-                
+
+
             </Script>
         </section>
         <!-- about me-->
@@ -703,7 +716,7 @@
 
                         </div>
                         <div class="dateIcon">
-                            <span> <i class="fas fa-calendar"></i>  </span>
+                            <span> <i class="fas fa-calendar"></i> </span>
                         </div>
                     </div>
 
@@ -1113,11 +1126,15 @@ public class vacabs {
                                 </h2>
                                 <img width="360" height="240" src="images/website.png" alt="ficsc">
                                 <p>
-                                    Yup, its the one you are currently looking at. 
-                                    Mainly made by html/css/javascript. Also used the three.js library to create annoying, cpu consuming blocks that follows your cursor so you can't concentrate on my shitty stuff. You can turn it off/adjust the range and frequency by clicking the square icon on the navigation bar tho. CAUTION! DO NOT set the range to 0 with a high frequency. That will expose my incompetant programming (and math) skills!
+                                    Yup, its the one you are currently looking at.
+                                    Mainly made by html/css/javascript. Also used the three.js library to create
+                                    annoying, cpu consuming blocks that follows your cursor so you can't concentrate on
+                                    my shitty stuff. You can turn it off/adjust the range and frequency by clicking the
+                                    square icon on the navigation bar tho. CAUTION! DO NOT set the range to 0 with a
+                                    high frequency. That will expose my incompetant programming (and math) skills!
                                 </p>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -1136,10 +1153,15 @@ public class vacabs {
                                 </h2>
                                 <img width="360" height="240" src="images/etensiongif.gif" alt="ficsc">
                                 <p>
-                                    Have you ever been in a shitty situation were you have tons of tab opened and don't know how to delete the ones you dont want... Well Im a messy person so Im always like that . So I made a simple extension that u can select the subdomains of the websites, choose what you dont want and delete them. Its a very simple concept yet its extremely useful for me. I just used javascript and some html and css for the popup in this project.
+                                    Have you ever been in a shitty situation were you have tons of tab opened and don't
+                                    know how to delete the ones you dont want... Well Im a messy person so Im always
+                                    like that . So I made a simple extension that u can select the subdomains of the
+                                    websites, choose what you dont want and delete them. Its a very simple concept yet
+                                    its extremely useful for me. I just used javascript and some html and css for the
+                                    popup in this project.
                                 </p>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -1373,31 +1395,30 @@ public class vacabs {
                     Contact me
                 </h1>
             </header>
-            <div class="contactList" >
-                <div class="Instagram "  grid-area="Instagram">
-                    <img src="images/instagramLogo.png" alt="Instagram Logo" width="240" height="240"
-                       >
+            <div class="contactList">
+                <div class="Instagram " grid-area="Instagram">
+                    <img src="images/instagramLogo.png" alt="Instagram Logo" width="240" height="240">
                     <h3 grid-area="insta">
                         @Lausingsamuel
                     </h3>
                 </div>
 
                 <div class="Gmail " grid-area="gmail">
-                    <img src="images/gmailLogo.png" alt="Gmail Logo" width="240" height="240" >
+                    <img src="images/gmailLogo.png" alt="Gmail Logo" width="240" height="240">
                     <h3 grid-area="gm">
                         Lausingsamuel@gmail.com
                     </h3>
                 </div>
 
                 <div class="Github" grid-area="github">
-                    <img src="images/GithubLogo.png" alt="Github Logo" width="240" height="240" >
+                    <img src="images/GithubLogo.png" alt="Github Logo" width="240" height="240">
                     <h3 grid-area="git">
                         @StarrryNight
                     </h3>
                 </div>
 
-                <div class="Discord"  grid-area="discord">
-                    <img src="images/DiscordLogo.png" alt="Discord Logo" width="240" height="240" >
+                <div class="Discord" grid-area="discord">
+                    <img src="images/DiscordLogo.png" alt="Discord Logo" width="240" height="240">
                     <h3 grid-area="dis">
                         Shooting Star #7594
                     </h3>
@@ -1413,7 +1434,7 @@ public class vacabs {
             Thank you!!!
         </h2>
         <h2>
-            <a href="https://youtu.be/dQw4w9WgXcQ" >Secret website...</a>
+            <a href="https://youtu.be/dQw4w9WgXcQ">Secret website...</a>
         </h2>
     </footer>
 </body>
